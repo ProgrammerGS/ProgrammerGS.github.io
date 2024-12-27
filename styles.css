@@ -50,6 +50,7 @@ body {
     color: white;
     width: 35%;
     padding: 20px;
+    overflow: auto;
 }
 .text-box-wide {
     background-color: #5E8DA3;
