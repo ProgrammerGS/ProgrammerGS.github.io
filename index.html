@@ -1,9 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <title>Gordon Su | Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
+        <div class="side-menu">
+            <a href="#about" id="menu-about">About</a>
+            <a href="#skills" id="menu-skills">Skills</a>
+            <a href="#projects" id="menu-projects">Projects</a>
+            <a href="#education" id="menu-education">Education</a>
+            <a href="#contact" id="menu-contact">Contact</a>
+            <a href="images/resume - english.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+        <div class="content">
+            <h3 id="about">ABOUT</h3>
+            <div class="section">
+                <div class="text">
+                    <p>I'm Gordon Su, a 2nd year Computer Science student at Western University and a passionate game developer in my spare time. In game development, I specialize in cel-shaded 3D models and procedural animations.</p>
+                    <p>I'm always looking for new opportunities and experiences, so feel free to reach out!</p>
+                    <div class="text-box">
+                        <p><strong>Interests/Hobbies</strong></p>
+                        <ul>
+                            <li>Board Games</li>
+                            <li>Video Games</li>
+                            <li>Anime/Manga</li>
+                            <li>Walking</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="images/photo.jpg" class="photo">
+            </div>
+            <h3 id="skills">SKILLS</h3>
+            <div class="section">
+                <div class="text-box">
+                    <p><strong>Skills</strong></p>
+                    <ul>
+                        <li>Fluent in English, Chinese (Mandarin), and Japanese</li>
+                        <li>Creating Websites</li>
+                        <li>Python, Java, C</li>
+                        <li>Blender, Affinity Photo</li>
+                        <li>Godot</li>
+                    </ul>
+                </div>
+                <div class="text-box">
+                    <p><strong>Tools</strong></p>
+                    <ul>
+                        <li>HTML/CSS, JavaScript</li>
+                        <li>Python, Java, C</li>
+                        <li>Blender, Affinity Photo</li>
+                        <li>Godot</li>
+                    </ul>
+                </div>
+            </div>
+            <h3 id="projects">PROJECTS</h3>
+            <div class="section">
+                <figure>
+                    <img src="images/procedural_animation.png" id="project1_btn" class="modal-btn" onclick="open_modal(1)">
+                    <figcaption>Procedural Animation</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/website.png" id="project2_btn" class="modal-btn" onclick="open_modal(2)">
+                    <figcaption>This Website</figcaption>
+                </figure>
+            </div>
+            <div class="section">
+                <figure>
+                    <img src="images/gurren.jpg" id="project3_btn" class="modal-btn" onclick="open_modal(3)">
+                    <figcaption>Gurren</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/flipping_cards.ico" id="project4_btn" class="modal-btn" onclick="open_modal(4)">
+                    <figcaption>Playing Cards</figcaption>
+                </figure>
+            </div>
+            <h3 id="education">EDUCATION</h3>
+            <div class="section">
+                <div class="text-box-wide">
+                    <p><strong>Western University</strong></p>
+                    <p><strong>Degree:</strong> Bachelor of Computer Science with Software Engineering Minor (Expected 2027)</p>
+                    <p><strong>Clubs:</strong></p>
+                    <ul>
+                        <li>Finance Executive of Tea Club</li>
+                        <li>Member of Game Design Society</li>
+                        <li>Member of Board Games Club</li>
+                    </ul>
+                    <p><strong>Relevant Coursework:</strong></p>
+                    <ul>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Software Tools and Systems Programming</li>
+                    </ul>
+                </div>
+            </div>
+            <h3 id="contact">CONTACT</h3>
+            <div class="section">
+                <div class="text-box">
+                    <ul>
+                        <li>Phone: +1 604 352 7507</li>
+                        <li>Email: <a href="mailto:gordonsu2004@gmail.com">gordonsu2004@gmail.com</a></li>
+                        <li>Github: <a href="https://github.com/ProgrammerGS" target="_blank" rel="noopener">github.com/ProgrammerGS</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/gordon-su-598577331/" target="_blank" rel="noopener">linkedin.com/in/gordon-su-598577331/</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="bottom"><p>Copyright © 2024 Gordon Su</p></h3>
+        </div>
+        
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="slideshow-container">
+
+                    <div class="slides1">
+                        <div class="number-text">1 / 5</div>
+                        <img src="images/procedural_animation.png" style="width:100%" class="modal-img">
+                        <div class="image-text">A look at the 3D model used in the project</div>
+                    </div>
+                    <div class="slides1">
+                        <div class="number-text">2 / 5</div>
+                        <img src="images/pa_1.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Opening door interaction 1</div>
+                    </div>
+                    <div class="slides1">
+                        <div class="number-text">3 / 5</div>
+                        <img src="images/pa_2.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Opening door interaction 2</div>
+                    </div>
+                    <div class="slides1">
+                        <div class="number-text">4 / 5</div>
+                        <img src="images/pa_3.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Opening curtains interaction 1</div>
+                    </div>
+                    <div class="slides1">
+                        <div class="number-text">5 / 5</div>
+                        <img src="images/pa_4.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Opening curtains interaction 2</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides1(-1)">❮</a>
+                    <a class="next" onclick="plusSlides1(1)">❯</a>
+                </div>
+                <div class="modal-text">
+                    <h3>Procedural Animations Project</h3>
+                    <p><strong>Date:</strong> ~April 2023-current</p>
+                    <p><strong>Description:</strong> This project is still work in progress, but I managed to create a few animations that utilise inverse kinematics to interact with the environment. These include picking up and interacting with items such as umbrellas and books, as well as interacting with static objects such as opening doors, cabinets, and curtains.</p>
+                    <p><strong>Technologies Used:</strong> Blender, Godot</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <div><img src="images/website.png" class="modal-img"></div>
+                <div class="modal-text">
+                    <h3>This Website</h3>
+                    <p><strong>Date:</strong> December 2024</p>
+                    <p><strong>Description:</strong> This is the website that you are on right now. I built it up from scratch myself using HTML/CSS and JavaScript, and uploaded it to Github.</p>
+                    <p><strong>Technologies Used:</strong> HTML/CSS, JavaScript</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <div class="slideshow-container">
+
+                    <div class="slides2">
+                        <div class="number-text">1 / 11</div>
+                        <img src="images/gurren.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Title screen of Gurren</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">2 / 11</div>
+                        <img src="images/gurren_2.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay of Gurren 1</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">3 / 11</div>
+                        <img src="images/gurren_3.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay of Gurren 2</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">4 / 11</div>
+                        <img src="images/robot_dog.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Robot dog that I made</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">5 / 11</div>
+                        <img src="images/turret.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Turret that I made</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">6 / 11</div>
+                        <img src="images/flying_robots.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Flying robots that I made 1</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">7 / 11</div>
+                        <img src="images/flying_robots_2.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Flying robots that I made 2</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">8 / 11</div>
+                        <img src="images/spikes_1.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Spikes that I made 1</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">9 / 11</div>
+                        <img src="images/spikes_2.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Spikes that I made 2</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">10 / 11</div>
+                        <video autoplay loop muted style="width: 100%" class="modal-img">
+                            <source src="images/animation.mp4" type="video/mp4">
+                        </video>
+                        <div class="image-text">Flying robot animation that I made</div>
+                    </div>
+                    <div class="slides2">
+                        <div class="number-text">11 / 11</div>
+                        <img src="images/lojamxgds2024.jpg" style="width:100%" class="modal-img">
+                        <div class="image-text">Someone playing the game at Lojam x GDS 2024</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides2(-1)">❮</a>
+                    <a class="next" onclick="plusSlides2(1)">❯</a>
+                </div>
+                <div class="modal-text">
+                    <h3>Gurren</h3>
+                    <p><strong>Date:</strong> March 2024</p>
+                    <p><strong>Description:</strong> This was my team submission for LojamxGDS 2024 (my first game jam). It is a platformer with enemies and obstacles.</p>
+                    <p><strong>My Role:</strong> I created all of the enemy and obstacle assets (the dog, the flying drones, the turrets, and the spikes).</p>
+                    <p>
+                        <strong>Links: </strong>
+                        <a href="https://elopez7.itch.io/gurren">Gurren</a>
+                        <a href="https://itch.io/jam/lojam-x-gds-2024/rate/2615650">LojamxGDS 2024</a>
+                    </p>
+                    <p><strong>Technologies Used:</strong> Blender, Unreal</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <div class="slideshow-container">
+
+                    <div class="slides3">
+                        <div class="number-text">1 / 9</div>
+                        <img src="images/model1.png" style="width:100%" class="modal-img">
+                        <div class="image-text">The model in Blender</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">2 / 9</div>
+                        <img src="images/model2.png" style="width:100%" class="modal-img">
+                        <div class="image-text">The model in Blender (with topology shown)</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">3 / 9</div>
+                        <img src="images/pose1.png" style="width:100%" class="modal-img">
+                        <div class="image-text">The character's shapekeys and rigging</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">4 / 9</div>
+                        <img src="images/pose2.png" style="width:100%" class="modal-img">
+                        <div class="image-text">The character's shapekeys and rigging (with topology shown)</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">5 / 9</div>
+                        <img src="images/room.png" style="width:100%" class="modal-img">
+                        <div class="image-text">The room in Blender</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">6 / 9</div>
+                        <img src="images/flipping_cards_1.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay 1</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">7 / 9</div>
+                        <img src="images/flipping_cards_2.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay 2</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">8 / 9</div>
+                        <img src="images/flipping_cards_3.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay 3</div>
+                    </div>
+                    <div class="slides3">
+                        <div class="number-text">9 / 9</div>
+                        <img src="images/flipping_cards_4.png" style="width:100%" class="modal-img">
+                        <div class="image-text">Gameplay 4</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides3(-1)">❮</a>
+                    <a class="next" onclick="plusSlides3(1)">❯</a>
+                </div>
+                <div class="modal-text">
+                    <h3>Flipping Cards</h3>
+                    <p><strong>Date:</strong> March 2024</p>
+                    <p><strong>Description:</strong> This was my solo submission for LojamxGDS 2024 (my first game jam). It is a card game that you play with a NPC. I started it halfway through the jam.</p>
+                    <p><strong>My Role:</strong> I created all assets and coded all gameplay within ~3.5 days.</p>
+                    <p>
+                        <strong>Links: </strong>
+                        <a href="https://programmergs.itch.io/flipping-cards">Flipping Cards</a>, 
+                        <a href="https://itch.io/jam/lojam-x-gds-2024/rate/2615650">LojamxGDS 2024</a>
+                    </p>
+                    <p><strong>Technologies Used:</strong> Blender, Godot</p>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
     </body>
 </html>
