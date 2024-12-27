@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>References | Star-Chasing Scientists</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: auto;
+                width: 1200px;
+                background-color: black;
+                background-image: url('images/background.png');
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                overflow-y: scroll;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+                outline: 1px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: orange;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: darkorange;
+            }
+            table {
+                border: 0;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table.website {
+                width: 1000px;
+                table-layout: fixed;
+                overflow: hidden;
+            }
+            .menu, .back_to_top {
+                position: fixed;
+                bottom: 20px;
+                z-index: 2;
+            }
+            .contents {
+                background-color: rgba(201, 199, 197, 0.5);
+                padding-left: 10px;
+                padding-right: 10px;
+                vertical-align: top;
+            }
+            h1 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 48px;
+                color: black;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: center;
+            }
+            p {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                color: black;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: left;
+            }
+            p.back_to_top {
+                position: fixed;
+                right: 40px;
+                color: black;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            a.back_to_top {
+                right: 50px;
+                opacity: 75%;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="top"></a>
+        <table class="website">
+            <tr colspan="10">
+                <td colspan="10" style="width: 1000px;"><img src="images/banner.png" alt="Star-Chasing Scientists Banner" title="Star-Chasing Scientists Banner"></td>
+            </tr>
+            <tr colspan="10" rowspan="5">
+                <td colspan="2" style="width: 200px;">
+                    <table class="menu">
+                        <tr>
+                            <td style="width: 200px;"><a href="index.html"><img onmouseout='this.src="images/home.png"' onmouseover='this.src="images/home_roll.gif"' src="images/home.png" alt="Home" title="Home"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="comets.html"><img onmouseout='this.src="images/comet.png"' onmouseover='this.src="images/comet_roll.gif"' src="images/comet.png" alt="Comets" title="Comets"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="nebulae.html"><img onmouseout='this.src="images/nebula.png"' onmouseover='this.src="images/nebula_roll.gif"' src="images/nebula.png" alt="Nebulae" title="Nebulae"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="asteroids.html"><img onmouseout='this.src="images/asteroid.png"' onmouseover='this.src="images/asteroid_roll.gif"'  src="images/asteroid.png" alt="Asteroids" title="Asteroids"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="references.html"><img onmouseout='this.src="images/references.png"' onmouseover='this.src="images/references_roll.gif"' src="images/references.png" alt="References" title="References"></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="8" style="width: 800px; padding-left: 50px;">
+                    <table>
+                        <tr>
+                            <td colspan="6" style="width: 600px;"><h1>References</h1></td>
+                            <td>
+                                <a href="#top" title="Back to top" class="back_to_top"><img src="images/rocket.png" id="rocket" onclick="rocket_on()"></a>
+                                <p class="back_to_top">Back To Top</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="4">
+                                <p style="text-shadow: none;">This site was created by: gsu25</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="4"><p><strong>DOWNLOAD LINKS</strong></p></td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents"><p><a href="originals/banner.afphoto">Banner afphoto File</a></p></td>
+                            <td class="contents"><p><a href="originals/animation.pptx">Animation pptx File</a></p></td>
+                            <td class="contents"></td>
+                            <td class="contents"></td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents"><p><strong>WEBSITE + HOME PAGE</strong></p></td>
+                            <td class="contents"><p><strong>COMETS PAGE</strong></p></td>
+                            <td class="contents"><p><strong>NEBULAE PAGE</strong></p></td>
+                            <td class="contents"><p><strong>ASTEROIDS PAGE</strong></p></td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <p><a href="https://www.youtube.com/watch?v=yEnbmSrYGNQ&ab_channel=AIN4K" target="_blank" rel="noopener">Banner Background Picture (Screenshot)</a></p>
+                                <p><a href="https://www.pngmart.com/image/67293" target="_blank" rel="noopener">Banner Comet Picture</a></p>
+                                <p><a href="https://www.pngmart.com/image/519823" target="_blank" rel="noopener">Banner Nebula Picture</a></p>
+                                <p><a href="https://elgatocuanticodesheldon.blogspot.com/2012/04/grandes-cientificos-5-edwin-hubble.html" target="_blank" rel="noopener">Banner Hubble Picture</a></p>
+                                <p><a href="https://iagout.wordpress.com/page/3/" target="_blank" rel="noopener">Banner Wolf Picture</a></p>
+                                <p><a href="https://en.wikipedia.org/wiki/Williamina_Fleming" target="_blank" rel="noopener">Banner Fleming Picture</a></p>
+                                <p><a href="https://www.britannica.com/biography/Johann-Franz-Encke" target="_blank" rel="noopener">Banner Encke Picture</a></p>
+                                <p><a href="https://natalie.mu/comic/news/341163" target="_blank" rel="noopener">Website Background Picture + Recommendation Picture</a></p>
+                                <p><a href="https://www.nasa.gov/" target="_blank" rel="noopener">NASA Logo</a></p>
+                                <p><a href="https://westernu.campuslabs.ca/engage/organization/spacesocietyoflondon" target="_blank" rel="noopener">Space Society of London Logo</a></p>
+                                <p><a href="https://www.pngmart.com/image/490391" target="_blank" rel="noopener">Rocket (Back to Top) Picture</a></p>
+                            </td>
+                            <td class="contents">
+                                <p><a href="https://science.nasa.gov/solar-system/comets" target="_blank" rel="noopener">Comets Summary</a></p>
+                                <p><a href="https://science.nasa.gov/solar-system/kuiper-belt/" target="_blank" rel="noopener">Kuiper Belt Summary</a></p>
+                                <p><a href="https://www.britannica.com/biography/Edmond-Halley" target="_blank" rel="noopener">Edmond Halley Picture and Text</a></p>
+                                <p><a href="https://www.npg.org.uk/collections/search/portrait/mw09662/Edmond-Halley" target="_blank" rel="noopener">Edmond Halley Picture 2</a></p>
+                                <p><a href="https://history.aip.org/exhibits/cosmology/tools/pic-early-reflectors-herschel.htm" target="_blank" rel="noopener">Caroline Herschel Picture</a></p>
+                                <p><a href="https://www.bibalex.org/SCIplanet/Attachments/images/1-william-and-caroline-herschel-german-science-source.jpg" target="_blank" rel="noopener">William and Caroline Herschel Picture</a></p>
+                                <p><a href="https://www.britannica.com/biography/Caroline-Lucretia-Herschel" target="_blank" rel="noopener">Caroline Herschel Text</a></p>
+                                <p><a href="https://www.britannica.com/biography/Johann-Franz-Encke" target="_blank" rel="noopener">Johann Franz Encke Picture and Text</a></p>
+                                <p><a href="https://www.sciencephoto.com/media/224805/view/portrait-of-j-f-encke-german-astronomer" target="_blank" rel="noopener">Johann Franz Encke Picture 2</a></p>
+                            </td>
+                            <td class="contents">
+                                <p><a href="https://www.britannica.com/science/nebula" target="_blank" rel="noopener">Nebulae Summary</a></p>
+                                <p><a href="https://www.space.com/16686-charles-messier-biography.html" target="_blank" rel="noopener">Charles Messier Picture</a></p>
+                                <p><a href="https://www.astronomia-iniciacion.com/charles-messier.html" target="_blank" rel="noopener">Charles Messier Picture 2</a></p>
+                                <p><a href="https://www.britannica.com/biography/Charles-Messier" target="_blank" rel="noopener">Charles Messier Text</a></p>
+                                <p><a href="https://history.aip.org/exhibits/cosmology/tools/pic-early-reflectors-herschel.htm" target="_blank" rel="noopener">William Herschel Picture 1</a></p>
+                                <p><a href="https://www.bibalex.org/SCIplanet/Attachments/images/1-william-and-caroline-herschel-german-science-source.jpg" target="_blank" rel="noopener">William and Caroline Herschel Picture</a></p>
+                                <p><a href="https://www.britannica.com/biography/William-Herschel" target="_blank" rel="noopener">William Herschel Text</a></p>
+                                <p><a href="https://elgatocuanticodesheldon.blogspot.com/2012/04/grandes-cientificos-5-edwin-hubble.html" target="_blank" rel="noopener">Edwin Hubble Picture 1</a></p>
+                                <p><a href="https://www.britannica.com/biography/Edwin-Hubble" target="_blank" rel="noopener">Edwin Hubble Picture 2 and Text</a></p>
+                            </td>
+                            <td class="contents">
+                                <p><a href="https://science.nasa.gov/solar-system/asteroids/" target="_blank" rel="noopener">Asteroids Summary</a></p>
+                                <p><a href="https://www.vaticanobservatory.org/sacred-space-astronomy/religious-scientists-fr-giuseppe-piazzi-c-r-1746-1826-discoverer-of-the-first-asteroid/" target="_blank" rel="noopener">Giuseppe Piazzi Picture</a></p>
+                                <p><a href="https://www.elfrontal.com/nota/virales/52107/quien-fue-giuseppe-piazzi-cual-fue-descubrimiento-fundamental-para-astronomia.html" target="_blank" rel="noopener">Giuseppe Piazzi Picture 2</a></p>
+                                <p><a href="https://www.britannica.com/biography/Giuseppe-Piazzi" target="_blank" rel="noopener">Giuseppe Piazzi Text</a></p>
+                                <p><a href="https://hgss.copernicus.org/articles/11/199/2020/" target="_blank" rel="noopener">Carl Friedrich Gauss Picture</a></p>
+                                <p><a href="https://www.britannica.com/biography/Carl-Friedrich-Gauss" target="_blank" rel="noopener">Carl Friedrich Gauss Picture 2 and Text</a></p>
+                                <p><a href="https://iagout.wordpress.com/page/3/" target="_blank" rel="noopener">Max Wolf Picture 1</a></p>
+                                <p><a href="https://www.gothard.hu/gttak/letters/letters.php" target="_blank" rel="noopener">Max Wolf Picture 2</a></p>
+                                <p><a href="https://www.britannica.com/biography/Max-Wolf" target="_blank" rel="noopener">Max Wolf Text</a></p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="2">
+                                <p><strong>VIDEO + ANIMATION + CINEMAGRAPH</strong></p>
+                            </td>
+                            <td class="contents" colspan="2">
+                                <p><strong>OTHER INTERACTIONS</strong></p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="2">
+                                <p><a href="https://www.nicovideo.jp/watch/sm39907292" target="_blank" rel="noopener">Video and Animation Character Images</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=Ia1k4Jec1Dc" target="_blank" rel="noopener">Video Comet Orbits Clip</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=zkglsg0K1IY" target="_blank" rel="noopener">Video Meteor Shower Clip</a></p>
+                                <p>Video BGM: <a href="https://www.youtube.com/watch?v=bg4uEPJcKIU" target="_blank" rel="noopener">05.祝!第1回地学部会議! by 伊賀拓郎</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=i432VG_CKLQ" target="_blank" rel="noopener">Cinemagraph Clip</a></p>
+                            </td>
+                            <td class="contents" colspan="2">
+                                <p><a href="https://pngimg.com/image/105508" target="_blank" rel="noopener">Interactable Asteroid Image</a></p>
+                                <p><a href="https://astro.com.sg/index.php?route=product/product&product_id=1010573" target="_blank" rel="noopener">Telescope Image</a></p>
+                                <p><a href="https://www.hdwallpapers.in/sky_with_full_of_bright_stars_and_dirtly_clouds_during_night_hd_galaxy-wallpapers.html" target="_blank" rel="noopener">Telescope Starry Sky Image</a></p>
+                                <p><a href="https://dart.jhuapl.edu/" target="_blank" rel="noopener">DART Mission Spacecraft and Asteroid Image</a></p>
+                                <p><a href="https://www.transparentpng.com/details/particle-shapes-mist-pictures_1929.html" target="_blank" rel="noopener">DART Mission Explosion Image</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            function rocket_on() {
+                document.getElementById("rocket").src = "images/rocket_roll.png";
+                setTimeout(rocket_off, 750);
+            }
+            
+            function rocket_off() {
+                document.getElementById("rocket").src = "images/rocket.png";
+            }
+        </script>
+    </body>
+</html>

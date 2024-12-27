@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home | Star-Chasing Scientists</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: auto;
+                width: 1200px;
+                background-color: black;
+                background-image: url('images/background.png');
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+                outline: 1px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: orange;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: darkorange;
+            }
+            table {
+                border: 0;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table.website {
+                width: 1000px;
+                table-layout: fixed;
+                overflow: hidden;
+            }
+            .menu, .back_to_top {
+                position: fixed;
+                bottom: 20px;
+                z-index: 2;
+            }
+            .contents {
+                background-color: rgba(201, 199, 197, 0.5);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #modal {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                padding-top: 25px;
+                padding-left: 475px;
+                z-index: 1;
+            }
+            .modal_content {
+                width: 800px;
+                height: 400px;
+                border-radius: 50px;
+                text-align: center;
+                background-color: rgb(201, 199, 197);
+            }
+            h1 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 48px;
+                color: black;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: center;
+            }
+            h3 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 36px;
+                text-align: center;
+                padding-top: 25px;
+                padding-bottom: 0px;
+                margin: 0px;
+            }
+            strong {
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            p, li {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: left;
+            }
+            p.back_to_top {
+                position: fixed;
+                right: 40px;
+                color: black;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            a.back_to_top {
+                right: 50px;
+                opacity: 75%;
+            }
+            #draggable {
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="top"></a>
+        <table class="website">
+            <tr colspan="10">
+                <td colspan="10" style="width: 1000px;"><img src="images/banner.png" alt="Star-Chasing Scientists Banner" title="Star-Chasing Scientists Banner"></td>
+            </tr>
+            <tr colspan="10" rowspan="5">
+                <td colspan="2" style="width: 200px;">
+                    <table class="menu">
+                        <tr>
+                            <td style="width: 200px;"><a href="index.html"><img onmouseout='this.src="images/home.png"' onmouseover='this.src="images/home_roll.gif"' src="images/home.png" alt="Home" title="Home"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="comets.html"><img onmouseout='this.src="images/comet.png"' onmouseover='this.src="images/comet_roll.gif"' src="images/comet.png" alt="Comets" title="Comets"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="nebulae.html"><img onmouseout='this.src="images/nebula.png"' onmouseover='this.src="images/nebula_roll.gif"' src="images/nebula.png" alt="Nebulae" title="Nebulae"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="asteroids.html"><img onmouseout='this.src="images/asteroid.png"' onmouseover='this.src="images/asteroid_roll.gif"'  src="images/asteroid.png" alt="Asteroids" title="Asteroids"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="references.html"><img onmouseout='this.src="images/references.png"' onmouseover='this.src="images/references_roll.gif"' src="images/references.png" alt="References" title="References"></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="8" style="width: 800px; padding-left: 50px;">
+                    <table>
+                        <tr>
+                            <td colspan="6" style="width: 600px;"><h1>Star-Chasing Scientists</h1></td>
+                            <td>
+                                <a href="#top" title="Back to top" class="back_to_top"><img src="images/rocket.png" id="rocket" onclick="rocket_on()"></a>
+                                <p class="back_to_top">Back To Top</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="5"><p>This website is a collection of astronomers that have discovered or made great contributions to the study of comets, nebulae, and asteroids.</p></td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="5">
+                                <p><strong>How to Use the Website</strong></p>
+                                <p>When navigating the webpages, click on the pictures of astronomers to learn more about them. I would recommend going in order from left to right, but you may go in any order. There are also fun interactive elements on every page like the asteroid below. Play with them!</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="3" style="width: 75px; vertical-align: top;">
+                                <img id="draggable" src="images/interactable_asteroid.png" alt="Interactable Asteroid" title="Interactable Asteroid">
+                            </td>
+                            <td class="contents" colspan="1" style="vertical-align: top;">
+                                <p style="width: 200px; height: 150px;">You can move this asteroid around the webpage. (By clicking and dragging)</p>
+                            </td>
+                            <td class="contents"></td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="5" style="height: 300px; vertical-align: top;">
+                                <p><strong>Honorable Mentions</strong></p>
+                                <p>I would like to dedicate this section to a few astronomers that were originally going to be on this website but did not receive their own section in the end:</p>
+                                <ol>
+                                    <li><a href="https://www.britannica.com/biography/Henrietta-Swan-Leavitt" target="_blank" rel="noopener">Henrietta Swan Leavitt</a> for her discovery of Cepheid variable stars</li>
+                                    <li><a href="https://www.britannica.com/biography/Williamina-Paton-Stevens-Fleming" target="_blank" rel="noopener">Williamina Paton Stevens Fleming</a> for her discovery of RR Lyrae variable stars (she actually made it in the banner)</li>
+                                    <li><a href="https://www.britannica.com/biography/Annie-Jump-Cannon" target="_blank" rel="noopener">Annie Jump Cannon</a> for her classification of stars still used today</li>
+                                </ol>
+                                <p>The people in the banner, listed from left to right, are: Edwin Hubble, Max Wolf, Williamina Paton Stevens Fleming, and Johann Franz Encke.</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="4" style="height: 300px; vertical-align: top;">
+                                <p><strong>Get Involved</strong></p>
+                                <p>There are many ways to learn more about space. One way is to visit space websites, such as <a href="https://www.nasa.gov/" target="_blank" rel="noopener">NASA</a>, <a href="https://www.space.com/" target="_blank" rel="noopener">space.com</a>.</p>
+                                <p>Another way to get involved is to join a local group dedicated to space. Are you a student at Western University? If so, join the Space Society of London! Their page is <a href="https://westernu.campuslabs.ca/engage/organization/spacesocietyoflondon" target="_blank" rel="noopener">here</a>.</p>
+                                <p>Do you have an interest in comets and asteroids? Find out more about Professor Peter Brown, who is researching these topics, <a href="https://physics.uwo.ca/people/faculty_web_pages/brown.html" target="_blank" rel="noopener">here</a>. You can also contact him through his email <a href="mailto:pbrown@uwo.ca">here</a>.</p>
+                            </td>
+                            <td class="contents">
+                                <img src="images/nasa_logo.svg" alt="NASA Logo" title="NASA Logo">
+                                <img src="images/ssol_logo.png" alt="SSOL Logo" title="SSOL Logo" style="width: 100px;">
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" colspan="6">
+                                <p onclick="open_modal()" style="cursor: pointer;"><strong>Recommendation</strong></p>
+                                <p style="width: 400px;">If you are interested, click the heading above for a recommendation of an animated show/comic book about space (and earth sciences).</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="modal">
+            <tr>
+                <td class="modal_content">
+                    <h3>Recommendation</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/koiasu.png" alt="" title="Asteroid in Love (Comic) Illustration" style="width: 400px;">
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>If you like watching animated shows or reading comic books (especially Japanese ones), there is one called "Asteroid in Love" that teaches viewers all about astronomy and earth sciences. My love for many scientific areas started from watching it.</p>
+                                <p>The story is about the journey of the main characters, Mira and Ao, as they try to fulfill their dream of finding and naming an asteroid, as well as their activities in their earth science club.</p>
+                                <p>Many of the images on this website come from it (even the font was chosen due to its similarity with the one used in the show). If this interests you at all, please read or watch it.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            var modal = document.getElementById("modal");
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            
+            function open_modal() {
+                modal.style.display = "block";
+            }
+            
+            function hide_modal() {
+                modal.style.display = "none";
+            }
+            
+            dragElement(document.getElementById("draggable"));
+            
+            function dragElement(elmnt) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                elmnt.onmousedown = dragMouseDown;
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+            
+            function rocket_on() {
+                document.getElementById("rocket").src = "images/rocket_roll.png";
+                setTimeout(rocket_off, 750);
+            }
+            
+            function rocket_off() {
+                document.getElementById("rocket").src = "images/rocket.png";
+            }
+        </script>
+    </body>
+</html>

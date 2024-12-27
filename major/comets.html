@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html onmousemove="move_sky(event)">
+    <head>
+        <title>Comets | Star-Chasing Scientists</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: auto;
+                width: 1200px;
+                background-color: black;
+                background-image: url('images/background.png');
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                overflow-y: scroll;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+                outline: 1px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: orange;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: darkorange;
+            }
+            table {
+                border: 0;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table.website {
+                width: 1000px;
+                table-layout: fixed;
+                overflow: hidden;
+            }
+            .menu, .back_to_top {
+                position: fixed;
+                bottom: 20px;
+                z-index: 2;
+            }
+            .contents {
+                background-color: rgba(201, 199, 197, 0.5);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #halley_modal, #herschel_modal, #encke_modal {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                padding-top: 25px;
+                padding-left: 475px;
+                z-index: 1;
+            }
+            .modal_content {
+                width: 800px;
+                height: 400px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            #halley_modal_content {
+                background-color: rgb(134, 179, 224);
+            }
+            #herschel_modal_content {
+                background-color: rgb(253, 213, 236);
+            }
+            #encke_modal_content {
+                background-color: rgb(194, 218, 105);
+            }
+            .modal_img {
+                height: 250px;
+                border: 4px;
+                border-style: solid;
+                border-color: white;
+            }
+            h1 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 48px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: center;
+            }
+            h3 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 36px;
+                text-align: center;
+                padding-top: 25px;
+                padding-bottom: 0px;
+                margin: 0px;
+            }
+            p, li {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: left;
+            }
+            p.back_to_top {
+                position: fixed;
+                right: 40px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            a.back_to_top {
+                right: 50px;
+                opacity: 75%;
+            }
+            #telescope {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px;
+                height: 400px;
+                background-color: rgba(255, 255, 255, 0);
+                border: 800px solid black;
+                border-radius: 50%;
+                z-index: 20;
+                cursor: pointer;
+            }
+            #telescope_text {
+                display: none;
+                position: fixed;
+                top: 85%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                color: white;
+                z-index: 30;
+            }
+            #sky {
+                display: none;
+                position: absolute;
+                z-index: 10;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="top"></a>
+        <table class="website">
+            <tr colspan="10">
+                <td colspan="10" style="width: 1000px;"><img src="images/banner.png" alt="Star-Chasing Scientists Banner" title="Star-Chasing Scientists Banner"></td>
+            </tr>
+            <tr colspan="10" rowspan="5">
+                <td colspan="2" style="width: 200px;">
+                    <table class="menu">
+                        <tr>
+                            <td style="width: 200px;"><a href="index.html"><img onmouseout='this.src="images/home.png"' onmouseover='this.src="images/home_roll.gif"' src="images/home.png" alt="Home" title="Home"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="comets.html"><img onmouseout='this.src="images/comet.png"' onmouseover='this.src="images/comet_roll.gif"' src="images/comet.png" alt="Comets" title="Comets"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="nebulae.html"><img onmouseout='this.src="images/nebula.png"' onmouseover='this.src="images/nebula_roll.gif"' src="images/nebula.png" alt="Nebulae" title="Nebulae"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="asteroids.html"><img onmouseout='this.src="images/asteroid.png"' onmouseover='this.src="images/asteroid_roll.gif"'  src="images/asteroid.png" alt="Asteroids" title="Asteroids"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="references.html"><img onmouseout='this.src="images/references.png"' onmouseover='this.src="images/references_roll.gif"' src="images/references.png" alt="References" title="References"></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="8" style="width: 800px; padding-left: 50px;">
+                    <table>
+                        <tr>
+                            <td colspan="6" style="width: 600px;"><h1>Comets</h1></td>
+                            <td>
+                                <a href="#top" title="Back to top" class="back_to_top"><img src="images/rocket.png" id="rocket" onclick="rocket_on()"></a>
+                                <p class="back_to_top">Back To Top</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <p><strong>Comets</strong> are frozen leftovers from the formation of the solar system composed of dust, rock, and ices. They range from a few miles to tens of miles wide, but as they orbit closer to the Sun, they heat up and spew gases and dust into a glowing head that can be larger than a planet. This material forms a tail that stretches millions of miles.</p>
+                                <p>The <strong>Kuiper Belt</strong> is a doughnut-shaped region of icy objects beyond the orbit of Neptune. It is home to Pluto and most of the known dwarf planets. There are likely billions of comets orbiting our Sun in the Kuiper Belt and even more distant Oort Cloud.</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <img src="images/edmond_halley.png" onmouseout='this.src="images/edmond_halley.png"' onmouseover='this.src="images/edmond_halley_roll.png"' style="padding: 20px;" onclick="open_halley_modal()">
+                                <img src="images/caroline_herschel.png" onmouseout='this.src="images/caroline_herschel.png"' onmouseover='this.src="images/caroline_herschel_roll.png"' style="padding: 20px;" onclick="open_herschel_modal()">
+                                <img src="images/johann_franz_encke.png" onmouseout='this.src="images/johann_franz_encke.png"' onmouseover='this.src="images/johann_franz_encke_roll.png"' style="padding: 20px;" onclick="open_encke_modal()">
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" style="height: 575px; vertical-align: top; text-align: center;">
+                                <p>Watch the video below to see the orbits of Encke's Comet and Halley's Comet.</p>
+                                <video controls style="max-width: 600px;">
+                                    <source src="videoanim/comets_video.mp4" type="video/mp4">
+                                    <track label="English" kind="subtitles" srclang="en" src="videoanim/captions_en.vtt">
+                                    <track label="French" kind="subtitles" srclang="fr" src="videoanim/captions_fr.vtt">
+                                    <track label="Russian" kind="subtitles" srclang="ru" src="videoanim/captions_ru.vtt">
+                                    <track label="Japanese" kind="subtitles" srclang="ja" src="videoanim/captions_ja.vtt">
+                                    <track label="Chinese (Simplified)" kind="subtitles" srclang="zh-Hans" src="videoanim/captions_zh_hans.vtt">
+                                    <track label="Chinese (Traditional)" kind="subtitles" srclang="zh-Hant" src="videoanim/captions_zh_hant.vtt">
+                                </video>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" style="vertical-align: top;">
+                                <p><strong>Telescopes</strong> were essential for looking at astronomical objects to astronomers like Edmond Halley. They have undergone many improvements since then. This is a picture of the Vixen SX2-ED103S Astronomical Telescope. Try clicking the telescope and moving your mouse around!</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" style="text-align: right;">
+                                <img src="images/telescope.png" title="Vixen Telescope" alt="Vixen Telescope" onmouseout='this.src="images/telescope.png"' onmouseover='this.src="images/telescope_roll.png"' onclick="telescope_on()">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="halley_modal">
+            <tr>
+                <td id="halley_modal_content" class="modal_content">
+                    <h3>Edmond Halley</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/edmond_halley.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> Nov. 8, 1656, Haggerston, England</p>
+                                <p><strong>Died:</strong> Jan. 14, 1742, Greenwich, England</p>
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>An English astronomer and mathematician who was the first to calculate the orbit of a comet later named after him. He is also noted for his role in the publication of Isaac Newton’s <em>Philosophiae Naturalis Principia Mathematica</em>.</p>
+                                <p>Halley published in 1705 <em>A Synopsis of the Astronomy of Comets</em>, in which he described the parabolic orbits of 24 comets that had been observed from 1337 to 1698. In 1718, he found that Sirius and Arcturus had slightly shifted their positions with respect to their neighbours, discovering what modern astronomers call proper motion.</p>
+                                <img src="images/edmond_halley_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/johann_franz_encke_left.png" onmouseout='this.src="images/johann_franz_encke_left.png"' onmouseover='this.src="images/johann_franz_encke_left_roll.png"' onclick="open_encke_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/caroline_herschel_right.png" onmouseout='this.src="images/caroline_herschel_right.png"' onmouseover='this.src="images/caroline_herschel_right_roll.png"' onclick="open_herschel_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="herschel_modal">
+            <tr>
+                <td id="herschel_modal_content" class="modal_content">
+                    <h3>Caroline Herschel</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/caroline_herschel.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> March 16, 1750, Hannover, Germany</p>
+                                <p><strong>Died:</strong> January 9, 1848, Hannover, Germany</p>
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>A German-born British astronomer who was a pioneer in the field and is considered the first professional female astronomer. She made important contributions to the work of her brother Sir William Herschel, executing many of the calculations connected with his studies.</p>
+                                <p>In 1786 she became the first woman to discover a comet. She also completed the cataloging of 2,500 nebulae and many star clusters. Learn more about her brother on the <a href="nebulae.html">nebulae page</a>.</p>
+                                <img src="images/william_and_caroline_herschel_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/edmond_halley_left.png" onmouseout='this.src="images/edmond_halley_left.png"' onmouseover='this.src="images/edmond_halley_left_roll.png"' onclick="open_halley_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/johann_franz_encke_right.png" onmouseout='this.src="images/johann_franz_encke_right.png"' onmouseover='this.src="images/johann_franz_encke_right_roll.png"' onclick="open_encke_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="encke_modal">
+            <tr>
+                <td id="encke_modal_content" class="modal_content">
+                    <h3>Johann Franz Encke</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/johann_franz_encke.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> Sept. 23, 1791, Hamburg, Germany</p>
+                                <p><strong>Died:</strong> Aug. 26, 1865, Spandau, Germany</p>
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>A German astronomer who in 1819 established the period of the comet now known as Encke's Comet. Encke's comet was the second periodic comet discovered (Halley's Comet was the first). He is also known for his discovery of Encke's Gap, a gap in the outer part of Saturn's outermost ring.</p>
+                                <p>He worked under the direction of Carl Friedrich Gauss for a period of time. Learn more about Gauss on the <a href="asteroids.html">asteroids page</a>.</p>
+                                <img src="images/johann_franz_encke_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/caroline_herschel_left.png" onmouseout='this.src="images/caroline_herschel_left.png"' onmouseover='this.src="images/caroline_herschel_left_roll.png"' onclick="open_herschel_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/edmond_halley_right.png" onmouseout='this.src="images/edmond_halley_right.png"' onmouseover='this.src="images/edmond_halley_right_roll.png"' onclick="open_halley_modal()">
+                </td>
+            </tr>
+        </table>
+        
+        <img id="sky" src="images/sky.jpg">
+        <p id="telescope" onclick="telescope_off()"></p>
+        <p id="telescope_text">Click mouse again to escape</p>
+        
+        <script>
+            var halley_modal = document.getElementById("halley_modal");
+            var herschel_modal = document.getElementById("herschel_modal");
+            var encke_modal = document.getElementById("encke_modal");
+            
+            window.onclick = function(event) {
+                if (event.target == halley_modal) {
+                    halley_modal.style.display = "none";
+                }
+                if (event.target == herschel_modal) {
+                    herschel_modal.style.display = "none";
+                }
+                if (event.target == encke_modal) {
+                    encke_modal.style.display = "none";
+                }
+            }
+            
+            function open_halley_modal() {
+                halley_modal.style.display = "block";
+                herschel_modal.style.display = "none";
+                encke_modal.style.display = "none";
+            }
+            
+            function open_herschel_modal() {
+                halley_modal.style.display = "none";
+                herschel_modal.style.display = "block";
+                encke_modal.style.display = "none";
+            }
+            
+            function open_encke_modal() {
+                halley_modal.style.display = "none";
+                herschel_modal.style.display = "none";
+                encke_modal.style.display = "block";
+            }
+            
+            function hide_modal() {
+                halley_modal.style.display = "none";
+                herschel_modal.style.display = "none";
+                encke_modal.style.display = "none";
+            }
+            
+            function move_sky() {
+                document.getElementById("sky").style.left = (event.clientX - 1280) + 'px';
+                document.getElementById("sky").style.top = (event.clientY + 360) + 'px';
+            }
+            
+            function telescope_on() {
+                document.getElementById("telescope").style.display = "block";
+                document.getElementById("telescope_text").style.display = "block";
+                document.getElementById("sky").style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+            
+            function telescope_off() {
+                document.getElementById("telescope").style.display = "none";
+                document.getElementById("telescope_text").style.display = "none";
+                document.getElementById("sky").style.display = "none";
+                document.body.style.overflow = "visible";
+            }
+            
+            function rocket_on() {
+                document.getElementById("rocket").src = "images/rocket_roll.png";
+                setTimeout(rocket_off, 750);
+            }
+            
+            function rocket_off() {
+                document.getElementById("rocket").src = "images/rocket.png";
+            }
+        </script>
+    </body>
+</html>

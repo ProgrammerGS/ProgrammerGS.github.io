@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nebulae | Star-Chasing Scientists</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: auto;
+                width: 1200px;
+                background-color: black;
+                background-image: url('images/background.png');
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                overflow-y: scroll;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+                outline: 1px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: orange;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: darkorange;
+            }
+            table {
+                border: 0;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table.website {
+                width: 1000px;
+                table-layout: fixed;
+                overflow: hidden;
+            }
+            .menu, .back_to_top {
+                position: fixed;
+                bottom: 20px;
+                z-index: 2;
+            }
+            .contents {
+                background-color: rgba(201, 199, 197, 0.5);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #messier_modal, #herschel_modal, #hubble_modal {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                padding-top: 25px;
+                padding-left: 475px;
+                z-index: 1;
+            }
+            .modal_content {
+                width: 800px;
+                height: 400px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            #messier_modal_content {
+                background-color: rgb(134, 179, 224);
+            }
+            #herschel_modal_content {
+                background-color: rgb(253, 213, 236);
+            }
+            #hubble_modal_content {
+                background-color: rgb(194, 218, 105);
+            }
+            .modal_img {
+                height: 250px;
+                border: 4px;
+                border-style: solid;
+                border-color: white;
+            }
+            h1 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 48px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: center;
+            }
+            h3 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 36px;
+                text-align: center;
+                padding-top: 25px;
+                padding-bottom: 0px;
+                margin: 0px;
+            }
+            p, li {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: left;
+            }
+            p.back_to_top {
+                position: fixed;
+                right: 40px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            a.back_to_top {
+                right: 50px;
+                opacity: 75%;
+            }
+            #drawing {
+                background-image: linear-gradient(midnightblue, dodgerblue);
+                position: absolute;
+                top: 1600px;
+                left: 520px;
+                width: 600px;
+                height: 400px;
+            }
+            .star {
+                position: absolute;
+                z-index: 10;
+            }
+            #alkaid {
+                top: 46px;
+                left: 46px;
+            }
+            #mizar {
+                top: 76px;
+                left: 171px;
+            }
+            #alioth {
+                top: 136px;
+                left: 246px;
+            }
+            #megrez {
+                top: 171px;
+                left: 321px;
+            }
+            #phecda {
+                top: 246px;
+                left: 336px;
+            }
+            #merak {
+                top: 276px;
+                left: 471px;
+            }
+            #dubhe {
+                top: 196px;
+                left: 496px;
+            }
+            #big_dipper_svg {
+                position: relative;
+                top: 50px;
+                left: 50px;
+                width: 500px;
+                height: 400px;
+                z-index: 10;
+            }
+            #slider_range {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 83%;
+                height: 15px;
+                border-radius: 5px;
+                background: black;
+                outline: none;
+                opacity: 0.75;
+            }
+            #slider_range:hover {
+                opacity: 1;
+            }
+            #slider_range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 24px;
+                height: 24px;
+                background: url('images/slider_button.png');
+                cursor: pointer;
+            }
+            #slider_range::-moz-range-thumb {
+                width: 24px;
+                height: 24px;
+                background: url('images/slider_button.png');
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="top"></a>
+        <table class="website">
+            <tr colspan="10">
+                <td colspan="10" style="width: 1000px;"><img src="images/banner.png" alt="Star-Chasing Scientists Banner" title="Star-Chasing Scientists Banner"></td>
+            </tr>
+            <tr colspan="10" rowspan="5">
+                <td colspan="2" style="width: 200px;">
+                    <table class="menu">
+                        <tr>
+                            <td style="width: 200px;"><a href="index.html"><img onmouseout='this.src="images/home.png"' onmouseover='this.src="images/home_roll.gif"' src="images/home.png" alt="Home" title="Home"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="comets.html"><img onmouseout='this.src="images/comet.png"' onmouseover='this.src="images/comet_roll.gif"' src="images/comet.png" alt="Comets" title="Comets"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="nebulae.html"><img onmouseout='this.src="images/nebula.png"' onmouseover='this.src="images/nebula_roll.gif"' src="images/nebula.png" alt="Nebulae" title="Nebulae"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="asteroids.html"><img onmouseout='this.src="images/asteroid.png"' onmouseover='this.src="images/asteroid_roll.gif"'  src="images/asteroid.png" alt="Asteroids" title="Asteroids"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="references.html"><img onmouseout='this.src="images/references.png"' onmouseover='this.src="images/references_roll.gif"' src="images/references.png" alt="References" title="References"></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="8" style="width: 800px; padding-left: 50px;">
+                    <table>
+                        <tr>
+                            <td colspan="6" style="width: 600px;"><h1>Nebulae</h1></td>
+                            <td>
+                                <a href="#top" title="Back to top" class="back_to_top"><img src="images/rocket.png" id="rocket" onclick="rocket_on()"></a>
+                                <p class="back_to_top">Back To Top</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" style="height: 200px; vertical-align: top;">
+                                <p><strong>Nebula</strong>, any of the various tenuous clouds of gas and dust that occur in interstellar space. The term was formerly applied to any object outside the solar system that had a diffuse appearance rather than a pointlike image, which unfortunately includes two unrelated classes of objects:</p>
+                                <ul>
+                                    <li><strong>Galaxies</strong>, which are enormous collections of stars and gas</li>
+                                    <li><strong>Galactic nebulae</strong>, which are composed of the interstellar medium (the gas between the stars, with its accompanying small solid particles) within a single galaxy</li>
+                                </ul>
+                                <p>Today the term nebula generally refers exclusively to the latter, but in this page, we will be focusing on the former. Variable stars, defined below, are also a big part of this page.</p>
+                                <p><strong>Variable stars</strong> are any stars whose observed light varies notably in intensity. The changes in brightness may be periodic, semiregular, or completely irregular. The Cepheids and RR Lyrae stars are typical examples of such variables.</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <img src="images/charles_messier.png" onmouseout='this.src="images/charles_messier.png"' onmouseover='this.src="images/charles_messier_roll.png"' style="padding: 20px;" onclick="open_messier_modal()">
+                                <img src="images/william_herschel.png" onmouseout='this.src="images/william_herschel.png"' onmouseover='this.src="images/william_herschel_roll.png"' style="padding: 20px;" onclick="open_herschel_modal()">
+                                <img src="images/edwin_hubble.png" onmouseout='this.src="images/edwin_hubble.png"' onmouseover='this.src="images/edwin_hubble_roll.png"' style="padding: 20px;" onclick="open_hubble_modal()">
+                            </td>
+                        </tr>
+                        <tr class="contents" style="height: 550px; vertical-align: top;">
+                            <td class="contents" style="text-align: center;">
+                                <p>Watch the animation below to learn more about the Pleiades, a star cluster that is in Charles Messier's catalogue.</p>
+                                <video autoplay loop muted style="max-width: 600px;">
+                                    <source src="videoanim/pleiades_animation.mp4" type="video/mp4">
+                                </video>
+                                <p style="width: 680px;">Fun fact: one of the stars in the Taurus constellation in the video, Aldebaran, is a variable star. Maybe a star you know is also one!</p>
+                            </td>
+                        </tr>
+                        <tr class="contents" style="height: 600px; vertical-align: top;">
+                            <td class="contents">
+                                <p>The seven stars that form the Big Dipper are: Alkaid, Mizar, Alioth, Megrez, Phecda, Merak, and Dubhe. Among them, Alioth is a variable star. Drag the slider across to draw the Big Dipper!</p>
+                                <input type="range" min="0" max="72" value="0" id="slider_range">
+                                <table id="drawing">
+                                    <tr>
+                                        <td>
+                                            <svg id="alkaid" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="mizar" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="alioth" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="megrez" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="phecda" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="merak" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="dubhe" class="star" height="10" width="10">
+                                                <circle r="5" cx="5" cy="5" fill="white" />
+                                            </svg>
+                                            <svg id="big_dipper_svg">
+                                                <path fill="none" stroke="white" stroke-width="3" id="big_dipper" d="M0 0 L125 30 L200 90 L275 125 L290 200 L425 230 L450 150 L275 125 L200 90 L125 30 Z" />
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="messier_modal">
+            <tr>
+                <td id="messier_modal_content" class="modal_content">
+                    <h3>Charles Messier</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/charles_messier.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> June 26, 1730, Badonviller, France</p>
+                                <p><strong>Died:</strong> April 12, 1817, Paris, France</p>
+                            </td>
+                            <td style="padding-left: 10px; padding-right: 20px;">
+                                <p>A French astronomer who was the first to compile a systematic catalog of nebulae and star clusters. Many of these nebulae, including some of the most prominent, are still known by his catalog numbers.</p>
+                                <p>He was also the first in France to observe the anticipated return of Halley’s Comet in 1758–59. Click here to learn more about Halley's comet.</p>
+                                <img src="images/charles_messier_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/edwin_hubble_left.png" onmouseout='this.src="images/edwin_hubble_left.png"' onmouseover='this.src="images/edwin_hubble_left_roll.png"' onclick="open_hubble_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/william_herschel_right.png" onmouseout='this.src="images/william_herschel_right.png"' onmouseover='this.src="images/william_herschel_right_roll.png"' onclick="open_herschel_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="herschel_modal">
+            <tr>
+                <td id="herschel_modal_content" class="modal_content">
+                    <h3>William Herschel</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/william_herschel.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> November 15, 1738, Hannover, Germany</p>
+                                <p><strong>Died:</strong> August 25, 1822, Slough, England</p>
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>A German-born British astronomer, the founder of sidereal astronomy for the systematic observation of the stars and nebulae beyond the solar system.</p>
+                                <p>He discovered the planet Uranus, hypothesized that nebulae are composed of stars, and developed a theory of stellar evolution. He made his own telescopes that proved far superior even to those used at the Greenwich Observatory at the time. He was also knighted in 1816. Learn more about his sister on the <a href="comets.html">comets page</a>.</p>
+                                <img src="images/william_and_caroline_herschel_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/charles_messier_left.png" onmouseout='this.src="images/charles_messier_left.png"' onmouseover='this.src="images/charles_messier_left_roll.png"' onclick="open_messier_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/edwin_hubble_right.png" onmouseout='this.src="images/edwin_hubble_right.png"' onmouseover='this.src="images/edwin_hubble_right_roll.png"' onclick="open_hubble_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="hubble_modal">
+            <tr>
+                <td id="hubble_modal_content" class="modal_content">
+                    <h3>Edwin Hubble</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td rowspan="2" colspan="2" style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/edwin_hubble.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> November 20, 1889, Marshfield, MO, U.S.</p>
+                                <p><strong>Died:</strong> September 28, 1953, San Marino, CA, U.S.</p>
+                            </td>
+                            <td rowspan="1" colspan="3" style="padding-left: 10px; padding-right: 20px;">
+                                <p>An American astronomer who is generally regarded as the leading observational cosmologist of the 20th century.</p>
+                                <p>In 1923 Hubble found Cepheid variable stars in the Andromeda Nebula. The fluctuations in light of these stars enabled Hubble to determine the nebula’s distance using the relationship between the period of the Cepheid fluctuations and its luminosity.</p>
+                                <p>The famous Hubble Space Telescope launched into space in 1990 and still being used today is named after him.</p>
+                                <img src="images/edwin_hubble_2.png" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/william_herschel_left.png" onmouseout='this.src="images/william_herschel_left.png"' onmouseover='this.src="images/william_herschel_left_roll.png"' onclick="open_herschel_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/charles_messier_right.png" onmouseout='this.src="images/charles_messier_right.png"' onmouseover='this.src="images/charles_messier_right_roll.png"' onclick="open_messier_modal()">
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            var messier_modal = document.getElementById("messier_modal");
+            var herschel_modal = document.getElementById("herschel_modal");
+            var hubble_modal = document.getElementById("hubble_modal");
+            
+            window.onclick = function(event) {
+                if (event.target == messier_modal) {
+                    messier_modal.style.display = "none";
+                }
+                if (event.target == herschel_modal) {
+                    herschel_modal.style.display = "none";
+                }
+                if (event.target == hubble_modal) {
+                    hubble_modal.style.display = "none";
+                }
+            }
+            
+            function open_messier_modal() {
+                messier_modal.style.display = "block";
+                herschel_modal.style.display = "none";
+                hubble_modal.style.display = "none";
+            }
+            
+            function open_herschel_modal() {
+                messier_modal.style.display = "none";
+                herschel_modal.style.display = "block";
+                hubble_modal.style.display = "none";
+            }
+            
+            function open_hubble_modal() {
+                messier_modal.style.display = "none";
+                herschel_modal.style.display = "none";
+                hubble_modal.style.display = "block";
+            }
+            
+            function hide_modal() {
+                messier_modal.style.display = "none";
+                herschel_modal.style.display = "none";
+                hubble_modal.style.display = "none";
+            }
+            
+            var big_dipper = document.getElementById("big_dipper");
+            var length = big_dipper.getTotalLength();
+            big_dipper.style.strokeDasharray = length;
+            big_dipper.style.strokeDashoffset = length;
+            
+            var slider_range = document.getElementById("slider_range");
+            slider_range.oninput = function() {
+                var draw = length * this.value / 100;
+                big_dipper.style.strokeDashoffset = length - draw;
+            }
+            
+            function rocket_on() {
+                document.getElementById("rocket").src = "images/rocket_roll.png";
+                setTimeout(rocket_off, 750);
+            }
+            
+            function rocket_off() {
+                document.getElementById("rocket").src = "images/rocket.png";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asteroids | Star-Chasing Scientists</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: auto;
+                width: 1200px;
+                background-color: black;
+                background-image: url('images/background.png');
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                overflow-y: scroll;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+                outline: 1px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: orange;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: darkorange;
+            }
+            table {
+                border: 0;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table.website {
+                width: 1000px;
+                table-layout: fixed;
+                overflow: hidden;
+            }
+            .menu, .back_to_top {
+                position: fixed;
+                bottom: 20px;
+                z-index: 2;
+            }
+            .contents {
+                background-color: rgba(201, 199, 197, 0.5);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #piazzi_modal, #gauss_modal, #wolf_modal {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                padding-top: 25px;
+                padding-left: 475px;
+                z-index: 1;
+            }
+            .modal_content {
+                width: 800px;
+                height: 400px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            #piazzi_modal_content {
+                background-color: rgb(134, 179, 224);
+            }
+            #gauss_modal_content {
+                background-color: rgb(253, 213, 236);
+            }
+            #wolf_modal_content {
+                background-color: rgb(194, 218, 105);
+            }
+            .modal_img {
+                height: 250px;
+                border: 4px;
+                border-style: solid;
+                border-color: white;
+            }
+            h1 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 48px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+                text-align: center;
+            }
+            h3 {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 36px;
+                text-align: center;
+                padding-top: 25px;
+                padding-bottom: 0px;
+                margin: 0px;
+            }
+            p, li {
+                font-family: "Tilt Neon", serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: left;
+            }
+            p.back_to_top {
+                position: fixed;
+                right: 40px;
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }
+            a.back_to_top {
+                right: 50px;
+                opacity: 75%;
+            }
+            #animation {
+                position: relative;
+                width: 600px;
+                height: 500px;
+                left: -50px;
+                background: black;
+            }
+            #button {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                cursor: pointer;
+            }
+            #spacecraft {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            #didymos {
+                position: absolute;
+                top: 150px;
+                left: 350px;
+            }
+            #explosion {
+                position: absolute;
+                top: 50px;
+                left: 250px;
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="top"></a>
+        <table class="website">
+            <tr colspan="10">
+                <td colspan="10" style="width: 1000px;"><img src="images/banner.png" alt="Star-Chasing Scientists Banner" title="Star-Chasing Scientists Banner"></td>
+            </tr>
+            <tr colspan="10" rowspan="5">
+                <td colspan="2" style="width: 200px;">
+                    <table class="menu">
+                        <tr>
+                            <td style="width: 200px;"><a href="index.html"><img onmouseout='this.src="images/home.png"' onmouseover='this.src="images/home_roll.gif"' src="images/home.png" alt="Home" title="Home"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="comets.html"><img onmouseout='this.src="images/comet.png"' onmouseover='this.src="images/comet_roll.gif"' src="images/comet.png" alt="Comets" title="Comets"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="nebulae.html"><img onmouseout='this.src="images/nebula.png"' onmouseover='this.src="images/nebula_roll.gif"' src="images/nebula.png" alt="Nebulae" title="Nebulae"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="asteroids.html"><img onmouseout='this.src="images/asteroid.png"' onmouseover='this.src="images/asteroid_roll.gif"'  src="images/asteroid.png" alt="Asteroids" title="Asteroids"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 200px;"><a href="references.html"><img onmouseout='this.src="images/references.png"' onmouseover='this.src="images/references_roll.gif"' src="images/references.png" alt="References" title="References"></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="8" style="width: 800px; padding-left: 50px;">
+                    <table>
+                        <tr>
+                            <td colspan="6" style="width: 600px;"><h1>Asteroids</h1></td>
+                            <td>
+                                <a href="#top" title="Back to top" class="back_to_top"><img src="images/rocket.png" id="rocket" onclick="rocket_on()"></a>
+                                <p class="back_to_top">Back To Top</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <p><strong>Asteroids</strong>, sometimes called minor planets, are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Most asteroids can be found orbiting the Sun between Mars and Jupiter within the main asteroid belt. Asteroids range in size from Vesta – the largest at about 329 miles (530 kilometers) in diameter – to bodies that are less than 33 feet (10 meters) across. The total mass of all the asteroids combined is less than that of Earth's Moon.</p>
+                                <p><strong>New asteroids</strong> are discovered quite frequently. When a new asteroid is discovered nowadays, its discoverer gets to choose its name (the rules surrounding naming asteroids is not very strict). There are asteroids named after famous people or places. A fairly up-to-date list of asteroid names can be found <a href="https://www.minorplanetcenter.net/iau/lists/MPNames.html" target="_blank" rel="noopener">here</a>.</p>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents" style="display: flex;">
+                                <img src="images/giuseppe_piazzi.png" onmouseout='this.src="images/giuseppe_piazzi.png"' onmouseover='this.src="images/giuseppe_piazzi_roll.png"' style="padding: 20px;" onclick="open_piazzi_modal()">
+                                <img src="images/carl_friedrich_gauss.png" onmouseout='this.src="images/carl_friedrich_gauss.png"' onmouseover='this.src="images/carl_friedrich_gauss_roll.png"' style="padding: 20px;" onclick="open_gauss_modal()">
+                                <img src="images/max_wolf.png" onmouseout='this.src="images/max_wolf.png"' onmouseover='this.src="images/max_wolf_roll.png"' style="padding: 20px;" onclick="open_wolf_modal()">
+                            </td>
+                        </tr>
+                        <tr class="contents" style="height: 500px; vertical-align: top;">
+                            <td class="contents">
+                                <p>This is a cinemagraph of the launch of NASA's spacecraft Lucy in 2021 for the first-ever mission to explore Jupiter's Trojan asteroids. Learn more about the Lucy mission <a href="https://science.nasa.gov/mission/lucy/" target="_blank" rel="noopener">here</a>.</p>
+                                <video style="max-width: 600px;" controls loop>
+                                    <source src="images/rocket_launch.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                        </tr>
+                        <tr class="contents">
+                            <td class="contents">
+                                <p>The <strong>Double Asteroid Redirection Test</strong> (DART) mission carried out successfully in 2022 was the first-ever space mission to change an asteroid's trajectory by kinetic impact. Learn more about the DART mission <a href="https://science.nasa.gov/mission/dart" target="_blank" rel="noopener">here</a> and <a href="https://dart.jhuapl.edu/" target="_blank" rel="noopener">here.</a></p>
+                            </td>
+                        </tr>
+                        <tr class="contents" style="height: 600px; vertical-align: top;">
+                            <td class="contents">
+                                <p>Click the start button below to play a simulation of the DART mission!</p>
+                                <table id ="animation">
+                                    <tr>
+                                        <td>
+                                            <img src="images/button.png" id="button" onclick="collision()">
+                                            <img src="images/didymos.png" id="didymos">
+                                            <img src="images/spacecraft.png" id ="spacecraft">
+                                            <img src="images/explosion.png" id="explosion">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="piazzi_modal">
+            <tr>
+                <td id="piazzi_modal_content" class="modal_content">
+                    <h3>Giuseppe Piazzi</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/giuseppe_piazzi.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> July 16, 1746, Ponte di Valtellina, Italy</p>
+                                <p><strong>Died:</strong> July 22, 1826, Naples, Italy</p>
+                            </td>
+                            <td style="padding-left: 10px; padding-right: 20px;">
+                                <p>An Italian astronomer who discovered and named the first asteroid, or “minor planet,” Ceres.</p>
+                                <p>He produced a great catalog of the positions of 7,646 stars and demonstrated that most stars are in motion relative to the Sun. He also founded the Observatory of Palermo and discovered the high proper motion of the important double star 61 Cygni there.</p>
+                                <img src="images/giuseppe_piazzi_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/max_wolf_left.png" onmouseout='this.src="images/max_wolf_left.png"' onmouseover='this.src="images/max_wolf_left_roll.png"' onclick="open_wolf_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/carl_friedrich_gauss_right.png" onmouseout='this.src="images/carl_friedrich_gauss_right.png"' onmouseover='this.src="images/carl_friedrich_gauss_right_roll.png"' onclick="open_gauss_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="gauss_modal">
+            <tr>
+                <td id="gauss_modal_content" class="modal_content">
+                    <h3>Carl Friedrich Gauss</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/carl_friedrich_gauss.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> April 30, 1777, Brunswick, Germany</p>
+                                <p><strong>Died:</strong> February 23, 1855, Göttingen, Germany</p>
+                            </td>
+                            <td style="padding-left: 10px; padding-right: 20px;">
+                                <p>A German mathematician, generally regarded as one of the greatest mathematicians of all time for his contributions to number theory, geometry, probability theory, geodesy, planetary astronomy, the theory of functions, and potential theory.</p>
+                                <p>He rediscovered the asteroid Ceres discovered by Giuseppe Piazzi after it vanished behind the sun before enough observations could be taken to calculate its orbit with sufficient accuracy to know where it would reappear.</p>
+                                <img src="images/carl_friedrich_gauss_2.png" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/giuseppe_piazzi_left.png" onmouseout='this.src="images/giuseppe_piazzi_left.png"' onmouseover='this.src="images/giuseppe_piazzi_left_roll.png"' onclick="open_piazzi_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/max_wolf_right.png" onmouseout='this.src="images/max_wolf_right.png"' onmouseover='this.src="images/max_wolf_right_roll.png"' onclick="open_wolf_modal()">
+                </td>
+            </tr>
+        </table>
+        <table id="wolf_modal">
+            <tr>
+                <td id="wolf_modal_content" class="modal_content">
+                    <h3>Max Wolf</h3>
+                    <table>
+                        <tr style="height: 500px;">
+                            <td style="padding-left: 20px; padding-right: 10px;">
+                                <img src="images/max_wolf.png" style="width: 200px; height: 200px;">
+                                <p><strong>Born:</strong> June 21, 1863, Heidelberg, Germany</p>
+                                <p><strong>Died:</strong> Oct. 3, 1932, Heidelberg, Germany</p>
+                            </td>
+                            <td style="padding-left: 10px; padding-right: 20px;">
+                                <p>A German astronomer who applied photography to the search for asteroids and discovered 228 of them. He was the first to use the stereocomparator (a type of stereoscopic viewer), which greatly helps in the discovery and identification of variable or moving objects in celestial photographs.</p>
+                                <p> Through his photographic studies he established the presence of dark clouds of interstellar matter in the Milky Way Galaxy. In 1906 he discovered Achilles, the first Trojan asteroid, asteroids inhabiting any planet’s stable Lagrange points.</p>
+                                <img src="images/max_wolf_2.jpg" class="modal_img">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="images/carl_friedrich_gauss_left.png" onmouseout='this.src="images/carl_friedrich_gauss_left.png"' onmouseover='this.src="images/carl_friedrich_gauss_left_roll.png"' onclick="open_gauss_modal()">
+                    <img src="images/x_button.png" onmouseout='this.src="images/x_button.png"' onmouseover='this.src="images/x_button_roll.png"' onclick="hide_modal()" style="padding-left: 25px; padding-right: 25px;">
+                    <img src="images/giuseppe_piazzi_right.png" onmouseout='this.src="images/giuseppe_piazzi_right.png"' onmouseover='this.src="images/giuseppe_piazzi_right_roll.png"' onclick="open_piazzi_modal()">
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            var piazzi_modal = document.getElementById("piazzi_modal");
+            var gauss_modal = document.getElementById("gauss_modal");
+            var wolf_modal = document.getElementById("wolf_modal");
+            
+            window.onclick = function(event) {
+                if (event.target == piazzi_modal) {
+                    piazzi_modal.style.display = "none";
+                }
+                if (event.target == gauss_modal) {
+                    gauss_modal.style.display = "none";
+                }
+                if (event.target == wolf_modal) {
+                    wolf_modal.style.display = "none";
+                }
+            }
+            
+            function open_piazzi_modal() {
+                piazzi_modal.style.display = "block";
+                gauss_modal.style.display = "none";
+                wolf_modal.style.display = "none";
+            }
+            
+            function open_gauss_modal() {
+                piazzi_modal.style.display = "none";
+                gauss_modal.style.display = "block";
+                wolf_modal.style.display = "none";
+            }
+            
+            function open_wolf_modal() {
+                piazzi_modal.style.display = "none";
+                gauss_modal.style.display = "none";
+                wolf_modal.style.display = "block";
+            }
+            
+            function hide_modal() {
+                piazzi_modal.style.display = "none";
+                gauss_modal.style.display = "none";
+                wolf_modal.style.display = "none";
+            }
+            
+            var button = document.getElementById("button");
+            var spacecraft = document.getElementById("spacecraft");
+            var didymos = document.getElementById("didymos");
+            var explosion = document.getElementById("explosion");
+            var id;
+            
+            function collision() {
+                button.src = "images/button_roll.png";
+                setTimeout(reset_button, 250);
+                
+                didymos.style.top = "150px";
+                explosion.style.top = "50px";
+                explosion.style.left = "250px";
+                
+                var pos1 = 0;
+                var pos2 = 0;
+                clearInterval(id);
+                id = setInterval(before, 10);
+                
+                function reset_button() {
+                    button.src = "images/button.png";
+                }
+                
+                function before() {
+                    if (pos1 >= 300) {
+                        clearInterval(id);
+                        explosion.style.opacity = 1;
+                        id = setInterval(after, 10);
+                    } else {
+                        pos1 += 4;
+                        spacecraft.style.top = 50 + pos1 / 2 + 'px';
+                        spacecraft.style.left = 50 + pos1 + 'px';
+                        didymos.style.left = 350 - pos1 / 4 + 'px';
+                    }
+                }
+                
+                function after() {
+                    if (pos2 >= 100) {
+                        clearInterval(id);
+                    } else {
+                        pos2 += 0.5;
+                        spacecraft.style.top = 200 + pos2 + 'px';
+                        spacecraft.style.left = 350 - pos2 + 'px';
+                        didymos.style.top = 150 + pos2 + 'px';
+                        didymos.style.left = 263 - pos2 + 'px';
+                        explosion.style.top = 50 + pos2 + 'px';
+                        explosion.style.left = 250 - pos2 + 'px';
+                        explosion.style.opacity = 1 - pos2 / 50;
+                    }
+                }
+            }
+            
+            function rocket_on() {
+                document.getElementById("rocket").src = "images/rocket_roll.png";
+                setTimeout(rocket_off, 750);
+            }
+            
+            function rocket_off() {
+                document.getElementById("rocket").src = "images/rocket.png";
+            }
+        </script>
+    </body>
+</html>

@@ -2,6 +2,7 @@ var modal1 = document.getElementById("modal1");
 var modal2 = document.getElementById("modal2");
 var modal3 = document.getElementById("modal3");
 var modal4 = document.getElementById("modal4");
+var modal5 = document.getElementById("modal5");
 
 window.onclick = function(event) {
     if (event.target == modal1) {
@@ -12,6 +13,8 @@ window.onclick = function(event) {
         modal3.style.display = "none";
     } else if (event.target == modal4) {
         modal4.style.display = "none";
+    } else if (event.target == modal5) {
+        modal5.style.display = "none";
     }
 }
 
@@ -24,6 +27,8 @@ function open_modal(num) {
         modal3.style.display = "block";
     } else if (num == 4) {
         modal4.style.display = "block";
+    } else if (num == 5) {
+        modal5.style.display = "block";
     }
 }
 
@@ -36,6 +41,8 @@ function hide_modal(num) {
         modal3.style.display = "none";
     } else if (num == 4) {
         modal4.style.display = "none";
+    } else if (num == 5) {
+        modal5.style.display = "none";
     }
 }
 
@@ -49,20 +56,17 @@ window.onscroll = function() {
         active[0].classList.remove("active");
     }
     
-    if (scrolled >= 0 && scrolled <= 17.5) {
+    if (scrolled >= 0 && scrolled <= 15) {
         document.getElementById("menu-about").classList.add("active");
-    } else if (scrolled > 17.5 && scrolled <= 35) {
+    } else if (scrolled > 15 && scrolled <= 32.5) {
         document.getElementById("menu-skills").classList.add("active");
-    } else if (scrolled > 35 && scrolled <= 75) {
+    } else if (scrolled > 32.5 && scrolled <= 72.5) {
         document.getElementById("menu-projects").classList.add("active");
-    } else if (scrolled > 75 && scrolled <= 95) {
+    } else if (scrolled > 72.5 && scrolled <= 92.5) {
         document.getElementById("menu-education").classList.add("active");
-    } else if (scrolled > 95 && scrolled <= 100) {
+    } else if (scrolled > 92.5) {
         document.getElementById("menu-contact").classList.add("active");
     }
-    
-    
-    document.getElementById("myBar").style.width = scrolled + "%";
 }
 
 let slideIndex1 = 1;
