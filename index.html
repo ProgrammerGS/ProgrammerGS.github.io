@@ -6,12 +6,24 @@
     </head>
     <body>
         <div class="side-menu">
-            <a href="#about" id="menu-about" class="active">About</a>
-            <a href="#skills" id="menu-skills">Skills</a>
-            <a href="#projects" id="menu-projects">Projects</a>
-            <a href="#education" id="menu-education">Education</a>
-            <a href="#contact" id="menu-contact">Contact</a>
-            <a href="images/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="#about" id="menu-about" class="active" style="display: flex; align-items: center; justify-content: space-between;">About
+                <div class="side-menu-icons"><img src="images/user.png" align="right" style="width: 24px;"></div>
+            </a>
+            <a href="#skills" id="menu-skills" style="display: flex; align-items: center; justify-content: space-between;">Skills
+                <div class="side-menu-icons"><img src="images/list.png" align="right" style="width: 24px;"></div>
+            </a>
+            <a href="#projects" id="menu-projects" style="display: flex; align-items: center; justify-content: space-between;">Projects
+                <div class="side-menu-icons"><img src="images/computer.png" align="right" style="width: 24px;"></div>
+            </a>
+            <a href="#education" id="menu-education" style="display: flex; align-items: center; justify-content: space-between;">Education
+                <div class="side-menu-icons"><img src="images/graduation-cap.png" align="right" style="width: 24px;"></div>
+            </a>
+            <a href="#contact" id="menu-contact" style="display: flex; align-items: center; justify-content: space-between;">Contact
+                <div class="side-menu-icons"><img src="images/envelope-white.png" align="right" style="width: 24px;"></div>
+            </a>
+            <a href="images/resume.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between;">Resume
+                <div class="side-menu-icons"><img src="images/download.png" align="right" style="width: 24px;"></div>
+            </a>
         </div>
         <div class="content">
             <h3 id="about" class="header">ABOUT</h3>
@@ -31,15 +43,15 @@
                 </div>
                 <img src="images/photo.jpg" class="photo">
             </div>
-            <h3 class="header">SKILLS</h3>
+            <h3 id="skills" class="header">SKILLS</h3>
             <div class="section">
                 <div class="text-box">
                     <p><strong>Skills</strong></p>
                     <ul>
                         <li>Fluent in English, Chinese (Mandarin), and Japanese</li>
-                        <li>Creating Websites</li>
+                        <li>Website Creation</li>
                         <li>Programming</li>
-                        <li>3D Modeling, Game Developing</li>
+                        <li>3D Modeling, Game Development</li>
                     </ul>
                 </div>
                 <div class="text-box">
@@ -47,13 +59,14 @@
                     <ul>
                         <li>HTML/CSS, JavaScript</li>
                         <li>Python, Java, C</li>
+                        <li>SQL</li>
                         <li>Unix Operating Systems</li>
                         <li>Blender, Affinity Photo</li>
                         <li>Godot</li>
                     </ul>
                 </div>
             </div>
-            <h3 class="header">PROJECTS</h3>
+            <h3 id="projects" class="header">PROJECTS</h3>
             <div class="section">
                 <figure>
                     <img src="images/procedural_animation.png" class="modal-btn" onclick="open_modal(1)">
@@ -66,21 +79,25 @@
             </div>
             <div class="section">
                 <figure>
-                    <img src="images/gurren.jpg" class="modal-btn" onclick="open_modal(3)">
-                    <figcaption>Gurren</figcaption>
+                    <img src="images/super_shrink_customizer.png" class="modal-btn" onclick="open_modal(3)">
+                    <figcaption>Super Shrink Customizer</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/flipping_cards.ico" class="modal-btn" onclick="open_modal(4)">
-                    <figcaption>Playing Cards</figcaption>
+                    <img src="images/gurren.jpg" class="modal-btn" onclick="open_modal(4)">
+                    <figcaption>Gurren</figcaption>
                 </figure>
             </div>
             <div class="section">
                 <figure>
-                    <img src="images/rocket.png" class="modal-btn" onclick="open_modal(5)">
+                    <img src="images/flipping_cards.ico" class="modal-btn" onclick="open_modal(5)">
+                    <figcaption>Playing Cards</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rocket.png" class="modal-btn" onclick="open_modal(6)">
                     <figcaption>Space-Themed Website</figcaption>
                 </figure>
             </div>
-            <h3 class="header">EDUCATION</h3>
+            <h3 id="education" class="header">EDUCATION</h3>
             <div class="section">
                 <div class="text-box-wide">
                     <p><strong>Western University</strong></p>
@@ -94,20 +111,27 @@
                     </ul>
                     <p><strong>Relevant Coursework:</strong></p>
                     <ul>
+                        <li>Databases I</li>
                         <li>Data Structures and Algorithms</li>
                         <li>Software Tools and Systems Programming</li>
                     </ul>
                 </div>
             </div>
-            <h3 class="header">CONTACT</h3>
+            <h3 id="contact" class="header">CONTACT</h3>
             <div class="section">
-                <div class="text-box-wide">
-                    <ul>
-                        <li class="contact">Phone: +1 604 352 7507</li>
-                        <li class="contact">Email: <a href="mailto:gordonsu2004@gmail.com">gordonsu2004@gmail.com</a></li>
-                        <li class="contact">Github: <a href="https://github.com/ProgrammerGS" target="_blank" rel="noopener">github.com/ProgrammerGS</a></li>
-                        <li class="contact">LinkedIn: <a href="https://www.linkedin.com/in/gordon-su-598577331/" target="_blank" rel="noopener">linkedin.com/in/gordon-su-598577331/</a></li>
-                    </ul>
+                <div class="text-box-wide" style="display: block;">
+                    <p class="contact">
+                        <img src="images/phone-call.png" style="width: 32px;">&nbsp;+1 604 352 7507
+                    </p>
+                    <p class="contact">
+                        <img src="images/envelope.png" style="width: 32px;">&nbsp;<a href="mailto:gordonsu2004@gmail.com">gordonsu2004@gmail.com</a>
+                    </p>
+                    <p class="contact">
+                        <img src="images/github.png" style="width: 32px;">&nbsp;<a href="https://github.com/ProgrammerGS" target="_blank" rel="noopener">github.com/ProgrammerGS</a>
+                    </p>
+                    <p class="contact">
+                        <img src="images/linkedin.png" style="width: 32px;">&nbsp;<a href="https://www.linkedin.com/in/gordon-su-598577331/" target="_blank" rel="noopener">linkedin.com/in/gordon-su-598577331/</a>
+                    </p>
                 </div>
             </div>
             <h3 class="bottom"><p>Copyright © 2024 Gordon Su</p></h3>
@@ -168,6 +192,29 @@
         </div>
         
         <div id="modal3" class="modal">
+            <div class="modal-content">
+                <div class="slideshow-container">
+                    <video autoplay loop muted style="width: 100%" class="modal-img">
+                        <source src="images/super_shrink_customizer.mp4" type="video/mp4">
+                    </video>
+                    <div class="image-text">Gameplay video</div>
+                </div>
+                <div class="modal-text">
+                    <h3>Super Shrink Customizer</h3>
+                    <p><strong>Date:</strong> January 2025</p>
+                    <p><strong>Description:</strong> This was my solo submission for GDS Micro Game Jam 2025 (my second game jam). It is a character customizing game where you can change the hairstyle, eyes, hats, and accessories of the character.</p>
+                    <p><strong>My Role:</strong> I created all assets and coded all gameplay within 1 day.</p>
+                    <p>
+                        <strong>Links: </strong>
+                        <a href="https://programmergs.itch.io/super-shrink-customizer" target="_blank" rel="noopener">Super Shrink Customizer</a>, 
+                        <a href="https://itch.io/jam/gds-micro-game-jam" target="_blank" rel="noopener">GDS Micro Game Jam 2025</a>
+                    </p>
+                    <p><strong>Technologies Used:</strong> Blender, Godot</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal4" class="modal">
             <div class="modal-content">
                 <div class="slideshow-container">
 
@@ -247,7 +294,7 @@
             </div>
         </div>
         
-        <div id="modal4" class="modal">
+        <div id="modal5" class="modal">
             <div class="modal-content">
                 <div class="slideshow-container">
 
@@ -315,7 +362,7 @@
             </div>
         </div>
         
-        <div id="modal5" class="modal">
+        <div id="modal6" class="modal">
             <div class="modal-content">
                 <div><img src="images/website2.png" class="modal-img"></div>
                 <div class="modal-text">

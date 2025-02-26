@@ -3,6 +3,7 @@ var modal2 = document.getElementById("modal2");
 var modal3 = document.getElementById("modal3");
 var modal4 = document.getElementById("modal4");
 var modal5 = document.getElementById("modal5");
+var modal6 = document.getElementById("modal6");
 
 window.onclick = function(event) {
     if (event.target == modal1) {
@@ -15,6 +16,8 @@ window.onclick = function(event) {
         modal4.style.display = "none";
     } else if (event.target == modal5) {
         modal5.style.display = "none";
+    } else if (event.target == modal6) {
+        modal6.style.display = "none";
     }
 }
 
@@ -29,6 +32,8 @@ function open_modal(num) {
         modal4.style.display = "block";
     } else if (num == 5) {
         modal5.style.display = "block";
+    } else if (num == 6) {
+        modal6.style.display = "block";
     }
 }
 
@@ -43,6 +48,8 @@ function hide_modal(num) {
         modal4.style.display = "none";
     } else if (num == 5) {
         modal5.style.display = "none";
+    } else if (num == 6) {
+        modal6.style.display = "none";
     }
 }
 
