@@ -68,33 +68,49 @@
             </div>
             <h3 id="projects" class="header">PROJECTS</h3>
             <div class="section">
-                <figure>
-                    <img src="images/procedural_animation.png" class="modal-btn" onclick="open_modal(1)">
-                    <figcaption>Procedural Animation</figcaption>
+                <figure class="modal-btn">
+                    <img src="images/pa_2.png" class="modal-btn-image" onclick="open_modal(1)">
+                    <div class="img-description">
+                        <figcaption><strong>Procedural Animation Project</strong></figcaption>
+                        <figcaption class="description">Date: ~April 2023-current</figcaption>
+                    </div>
                 </figure>
-                <figure>
-                    <img src="images/github_logo.png" class="modal-btn" onclick="open_modal(2)">
-                    <figcaption>This Website</figcaption>
+                <figure class="modal-btn">
+                    <img src="images/super_shrink_customizer.png" class="modal-btn-image" style="right: 0px;" onclick="open_modal(2)">
+                    <div class="img-description">
+                        <figcaption><strong>Super Shrink Customizer</strong></figcaption>
+                        <figcaption class="description">Date: January 2025</figcaption>
+                    </div>
+                </figure>
+                <figure class="modal-btn">
+                    <img src="images/github_logo.png" class="modal-btn-image" style="align-self: center;" onclick="open_modal(3)">
+                    <div class="img-description">
+                        <figcaption><strong>This Website</strong></figcaption>
+                        <figcaption class="description">Date: December 2024</figcaption>
+                    </div>
                 </figure>
             </div>
             <div class="section">
-                <figure>
-                    <img src="images/super_shrink_customizer.png" class="modal-btn" onclick="open_modal(3)">
-                    <figcaption>Super Shrink Customizer</figcaption>
+                <figure class="modal-btn">
+                    <img src="images/gurren.jpg" class="modal-btn-image" onclick="open_modal(4)">
+                    <div class="img-description">
+                        <figcaption><strong>Gurren</strong></figcaption>
+                        <figcaption class="description">Date: March 2024</figcaption>
+                    </div>
                 </figure>
-                <figure>
-                    <img src="images/gurren.jpg" class="modal-btn" onclick="open_modal(4)">
-                    <figcaption>Gurren</figcaption>
+                <figure class="modal-btn">
+                    <img src="images/flipping_cards.png" class="modal-btn-image" onclick="open_modal(5)">
+                    <div class="img-description">
+                        <figcaption><strong>Playing Cards</strong></figcaption>
+                        <figcaption class="description">Date: March 2024</figcaption>
+                    </div>
                 </figure>
-            </div>
-            <div class="section">
-                <figure>
-                    <img src="images/flipping_cards.ico" class="modal-btn" onclick="open_modal(5)">
-                    <figcaption>Playing Cards</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/rocket.png" class="modal-btn" onclick="open_modal(6)">
-                    <figcaption>Space-Themed Website</figcaption>
+                <figure class="modal-btn">
+                    <img src="images/rocket.png" class="modal-btn-image" onclick="open_modal(6)">
+                    <div class="img-description">
+                        <figcaption><strong>Space-Themed Website</strong></figcaption>
+                        <figcaption class="description">Date: November 2024</figcaption>
+                    </div>
                 </figure>
             </div>
             <h3 id="education" class="header">EDUCATION</h3>
@@ -140,29 +156,24 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="slideshow-container">
-
+                    
                     <div class="slides1">
-                        <div class="number-text">1 / 5</div>
-                        <img src="images/procedural_animation.png" style="width:100%" class="modal-img">
-                        <div class="image-text">A look at the 3D model used in the project</div>
-                    </div>
-                    <div class="slides1">
-                        <div class="number-text">2 / 5</div>
+                        <div class="number-text">1 / 4</div>
                         <img src="images/pa_1.png" style="width:100%" class="modal-img">
                         <div class="image-text">Opening door interaction 1</div>
                     </div>
                     <div class="slides1">
-                        <div class="number-text">3 / 5</div>
+                        <div class="number-text">2 / 4</div>
                         <img src="images/pa_2.png" style="width:100%" class="modal-img">
                         <div class="image-text">Opening door interaction 2</div>
                     </div>
                     <div class="slides1">
-                        <div class="number-text">4 / 5</div>
+                        <div class="number-text">3 / 4</div>
                         <img src="images/pa_3.png" style="width:100%" class="modal-img">
                         <div class="image-text">Opening curtains interaction 1</div>
                     </div>
                     <div class="slides1">
-                        <div class="number-text">5 / 5</div>
+                        <div class="number-text">4 / 4</div>
                         <img src="images/pa_4.png" style="width:100%" class="modal-img">
                         <div class="image-text">Opening curtains interaction 2</div>
                     </div>
@@ -171,7 +182,7 @@
                     <a class="next" onclick="plusSlides1(1)">❯</a>
                 </div>
                 <div class="modal-text">
-                    <h3>Procedural Animations Project</h3>
+                    <h3>Procedural Animation Project</h3>
                     <p><strong>Date:</strong> ~April 2023-current</p>
                     <p><strong>Description:</strong> This project is still work in progress, but I managed to create a few animations that utilise inverse kinematics to interact with the environment. These include picking up and interacting with items such as umbrellas and books, as well as interacting with static objects such as opening doors, cabinets, and curtains.</p>
                     <p><strong>Technologies Used:</strong> Blender, Godot</p>
@@ -180,18 +191,6 @@
         </div>
         
         <div id="modal2" class="modal">
-            <div class="modal-content">
-                <div><img src="images/website.png" class="modal-img"></div>
-                <div class="modal-text">
-                    <h3>This Website</h3>
-                    <p><strong>Date:</strong> December 2024</p>
-                    <p><strong>Description:</strong> This is the website that you are on right now. I built it up from scratch myself using HTML/CSS and JavaScript, and uploaded it to Github.</p>
-                    <p><strong>Technologies Used:</strong> HTML/CSS, JavaScript</p>
-                </div>
-            </div>
-        </div>
-        
-        <div id="modal3" class="modal">
             <div class="modal-content">
                 <div class="slideshow-container">
                     <video autoplay loop muted style="width: 100%" class="modal-img">
@@ -210,6 +209,18 @@
                         <a href="https://itch.io/jam/gds-micro-game-jam" target="_blank" rel="noopener">GDS Micro Game Jam 2025</a>
                     </p>
                     <p><strong>Technologies Used:</strong> Blender, Godot</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <div><img src="images/website.png" class="modal-img"></div>
+                <div class="modal-text">
+                    <h3>This Website</h3>
+                    <p><strong>Date:</strong> December 2024</p>
+                    <p><strong>Description:</strong> This is the website that you are on right now. I built it up from scratch myself using HTML/CSS and JavaScript, and uploaded it to Github.</p>
+                    <p><strong>Technologies Used:</strong> HTML/CSS, JavaScript, Google's Model Viewer Module</p>
                 </div>
             </div>
         </div>
@@ -300,7 +311,7 @@
 
                     <div class="slides3">
                         <div class="number-text">1 / 9</div>
-                        <img src="images/model1.png" style="width:100%" class="modal-img">
+                        <model-viewer src="./assets/character.glb" camera-controls></model-viewer>
                         <div class="image-text">The model in Blender</div>
                     </div>
                     <div class="slides3">
@@ -379,5 +390,6 @@
         </div>
         
         <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     </body>
 </html>
