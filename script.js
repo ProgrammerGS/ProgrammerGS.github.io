@@ -1,3 +1,9 @@
+function swapSideMenuActive(elementID) {
+    if (document.getElementById(elementID) != null) {
+        document.getElementById(elementID).classList.add("active");
+    }
+}
+
 window.onscroll = function() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -8,16 +14,48 @@ window.onscroll = function() {
         active[0].classList.remove("active");
     }
     
-    if (scrolled >= 0 && scrolled <= 15) {
-        document.getElementById("menu-about").classList.add("active");
-    } else if (scrolled > 15 && scrolled <= 35) {
-        document.getElementById("menu-skills").classList.add("active");
-    } else if (scrolled > 35 && scrolled <= 57.5) {
-        document.getElementById("menu-projects").classList.add("active");
-    } else if (scrolled > 57.5 && scrolled <= 87.5) {
-        document.getElementById("menu-education").classList.add("active");
-    } else if (scrolled > 87.5) {
-        document.getElementById("menu-contact").classList.add("active");
+    if (document.getElementById("menu-about") != null) {
+        if (scrolled >= 0 && scrolled <= 15) {
+            swapSideMenuActive("menu-about");
+        } else if (scrolled > 15 && scrolled <= 35) {
+            swapSideMenuActive("menu-skills");
+        } else if (scrolled > 35 && scrolled <= 57.5) {
+            swapSideMenuActive("menu-projects");
+        } else if (scrolled > 57.5 && scrolled <= 87.5) {
+            swapSideMenuActive("menu-education");
+        } else if (scrolled > 87.5) {
+            swapSideMenuActive("menu-contact");
+        }
+    } else if (document.getElementById("menu-project") != null) {
+        if (scrolled >= 0 && scrolled <= 17.5) {
+            swapSideMenuActive("menu-project");
+        } else if (scrolled > 17.5 && scrolled <= 45) {
+            swapSideMenuActive("menu-movement");
+        } else if (scrolled > 45 && scrolled <= 75) {
+            swapSideMenuActive("menu-interaction");
+        } else if (scrolled > 75) {
+            swapSideMenuActive("menu-future");
+        }
+    } else if (document.getElementById("menu-ssc") != null) {
+        if (scrolled >= 0 && scrolled <= 12.5) {
+            swapSideMenuActive("menu-ssc");
+        } else if (scrolled > 12.5 && scrolled <= 35) {
+            swapSideMenuActive("menu-petden");
+        } else if (scrolled > 35 && scrolled <= 60) {
+            swapSideMenuActive("menu-proteinpower");
+        } else if (scrolled > 60 && scrolled <= 85) {
+            swapSideMenuActive("menu-gurren");
+        } else if (scrolled > 85) {
+            swapSideMenuActive("menu-playingcards");
+        }
+    } else if (document.getElementById("menu-current") != null) {
+        if (scrolled >= 0 && scrolled <= 22.5) {
+            swapSideMenuActive("menu-current");
+        } else if (scrolled > 22.5 && scrolled <= 67.5) {
+            swapSideMenuActive("menu-space");
+        } else if (scrolled > 67.5) {
+            swapSideMenuActive("menu-delivery");
+        }
     }
 }
 
