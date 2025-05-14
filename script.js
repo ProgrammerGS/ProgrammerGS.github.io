@@ -1,58 +1,3 @@
-var modal1 = document.getElementById("modal1");
-var modal2 = document.getElementById("modal2");
-var modal3 = document.getElementById("modal3");
-var modal4 = document.getElementById("modal4");
-var modal5 = document.getElementById("modal5");
-var modal6 = document.getElementById("modal6");
-
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-    } else if (event.target == modal2) {
-        modal2.style.display = "none";
-    } else if (event.target == modal3) {
-        modal3.style.display = "none";
-    } else if (event.target == modal4) {
-        modal4.style.display = "none";
-    } else if (event.target == modal5) {
-        modal5.style.display = "none";
-    } else if (event.target == modal6) {
-        modal6.style.display = "none";
-    }
-}
-
-function open_modal(num) {
-    if (num == 1) {
-        modal1.style.display = "block";
-    } else if (num == 2) {
-        modal2.style.display = "block";
-    } else if (num == 3) {
-        modal3.style.display = "block";
-    } else if (num == 4) {
-        modal4.style.display = "block";
-    } else if (num == 5) {
-        modal5.style.display = "block";
-    } else if (num == 6) {
-        modal6.style.display = "block";
-    }
-}
-
-function hide_modal(num) {
-    if (num == 1) {
-        modal1.style.display = "none";
-    } else if (num == 2) {
-        modal2.style.display = "none";
-    } else if (num == 3) {
-        modal3.style.display = "none";
-    } else if (num == 4) {
-        modal4.style.display = "none";
-    } else if (num == 5) {
-        modal5.style.display = "none";
-    } else if (num == 6) {
-        modal6.style.display = "none";
-    }
-}
-
 window.onscroll = function() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -65,13 +10,13 @@ window.onscroll = function() {
     
     if (scrolled >= 0 && scrolled <= 15) {
         document.getElementById("menu-about").classList.add("active");
-    } else if (scrolled > 15 && scrolled <= 32.5) {
+    } else if (scrolled > 15 && scrolled <= 35) {
         document.getElementById("menu-skills").classList.add("active");
-    } else if (scrolled > 32.5 && scrolled <= 72.5) {
+    } else if (scrolled > 35 && scrolled <= 57.5) {
         document.getElementById("menu-projects").classList.add("active");
-    } else if (scrolled > 72.5 && scrolled <= 92.5) {
+    } else if (scrolled > 57.5 && scrolled <= 87.5) {
         document.getElementById("menu-education").classList.add("active");
-    } else if (scrolled > 92.5) {
+    } else if (scrolled > 87.5) {
         document.getElementById("menu-contact").classList.add("active");
     }
 }

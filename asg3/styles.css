@@ -1,0 +1,94 @@
+/* Programmer Name: 46 */
+/* The CSS for every webpage */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #F0F0F0;
+	margin: auto;
+	font-family: "Yu Gothic Medium", sans-serif;
+	color: #505050;
+	align-items: center;
+}
+
+h1 {
+	font-size: 48px;
+	text-align: center;
+}
+
+h2, h4, p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+table {
+	border-collapse:collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.website {
+	width: 900px;
+}
+
+tr, td {
+	background-color: white;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+td.inner {
+	border:3px solid #505050;
+	padding: 10px;
+}
+
+strong {
+	color: #4259D2;
+}
+
+p {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.return {
+	background-color: white;
+	color: #505050;
+	width: 175px;
+	display: block;
+	text-align: center;
+	padding: 15px;
+	border: 5px solid #505050;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#navbar {
+	background-color: white;
+	top: 0;
+	overflow: hidden;
+	position: sticky;
+	border-style: dashed;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: -10px;
+	border-color: #505050;
+}
+
+#navbar a {
+	float: left;
+	display: block;
+	color: #505050;
+	padding: 16px;
+	text-decoration: none;
+}
+
+input {
+	padding: 3px;
+}
