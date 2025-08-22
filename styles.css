@@ -65,7 +65,7 @@ body {
     color: black;
     width: 60%;
     padding: 20px;
-    overflow: hidden;
+    overflow: visible;
 }
 .text-box {
     background-color: white;
@@ -206,6 +206,7 @@ figcaption {
     width: 100%;
     text-align: center;
     margin: auto;
+    overflow: visible;
 }
 .number-text {
     color: white;

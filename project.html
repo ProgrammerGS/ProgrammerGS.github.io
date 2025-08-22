@@ -10,6 +10,7 @@
             <a href="#project" id="menu-project" class="active">About</a>
             <a href="#movement" id="menu-movement">Basic Movement</a>
             <a href="#interaction" id="menu-interaction">Item Interaction</a>
+            <a href="#multiple" id="menu-multiple">Multiple Item Interaction</a>
             <a href="#future" id="menu-future">What's Next?</a>
         </div>
         <div class="content">
@@ -107,18 +108,46 @@
                 </div>
                 <div class="text-box">
                     <p>This step was the most important, and the features implemented here are used in most of the steps following it.</p>
-                    <p>The videos show various item interactions. There are other item interactions that have been implemented, but are not shown here (as there are too many), such as opening books and flipping through their pages, as well as opening/closing curtains and other types of doors.</p>
+                    <p>The videos show various item interactions. There are other item interactions that have been implemented, but are not shown here, such as opening books and flipping through their pages, as well as opening/closing curtains and other types of doors.</p>
+                </div>
+            </div>
+            <h3 id="multiple" class="header">MULTIPLE ITEM INTERACTION</h3>
+            <div class="section">
+                <div class="video-box">
+                    <div class="slideshow-container">
+
+                        <div class="slides3">
+                            <div class="number-text">1 / 2</div>
+                            <video style="width: 100%;" autoplay muted loop>
+                                <source src="images/carrying.mp4" type="video/mp4">
+                            </video>
+                            <div class="image-text">Carrying (with both hands)</div>
+                        </div>
+                        <div class="slides3">
+                            <div class="number-text">2 / 2</div>
+                            <video style="width: 100%;" autoplay muted loop>
+                                <source src="images/stacking.mp4" type="video/mp4">
+                            </video>
+                            <div class="image-text">Stacking items</div>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides3(-1)">❮</a>
+                        <a class="next" onclick="plusSlides3(1)">❯</a>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <p>This step was an extension of the last, allowing multiple items to be held at once and for larger items to be held with both hands.</p>
+                    <p>The videos show the player grabbing various items and putting them on top of each other. I am currently in the process of adding storage items that smaller items can be put inside of, such as cabinets, closets, and boxes.</p>
                 </div>
             </div>
             <h3 id="future" class="header">WHAT'S NEXT?</h3>
             <div class="section">
                 <div class="text-box-wide">
-                    <p>I have already planned out most of the remaining steps in the procedural animation part of the project. For a few of these steps, I have already created and tested them in other smaller projects, but most are uncompleted. Here is a list of the main steps for those interested:</p>
+                    <p>I have already planned out most of the remaining steps in the procedural animation part of the project. Here is a list of the main steps for those interested:</p>
                     <ol>
-                        <li><strong>Item Interaction (continued)</strong>
+                        <li><strong>Multiple Item Interaction (continued)</strong>
                             <ul>
-                                <li>Carrying items (both hands) <a class="highlighted">&#8592; I am currently here</a></li>
-                                <li>Storage items</li>
+                                <li>Storage items <a class="highlighted">&#8592; I am currently here</a></li>
                             </ul>
                         </li>
                         <li><strong>Advanced Item Interaction</strong>
@@ -129,7 +158,7 @@
                                 <li>Hand gestures</li>
                                 <li>Writing</li>
                                 <li>Eating</li>
-                                <li>Drinking + pouring liquids</li>
+                                <li>Drinking</li>
                             </ul>
                         </li>
                         <li><strong>Devices</strong>

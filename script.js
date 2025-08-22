@@ -15,25 +15,29 @@ window.onscroll = function() {
     }
     
     if (document.getElementById("menu-about") != null) {
-        if (scrolled >= 0 && scrolled <= 15) {
+        if (scrolled >= 0 && scrolled <= 12.5) {
             swapSideMenuActive("menu-about");
-        } else if (scrolled > 15 && scrolled <= 35) {
-            swapSideMenuActive("menu-skills");
-        } else if (scrolled > 35 && scrolled <= 57.5) {
-            swapSideMenuActive("menu-projects");
-        } else if (scrolled > 57.5 && scrolled <= 87.5) {
+        } else if (scrolled > 12.5 && scrolled <= 35) {
             swapSideMenuActive("menu-education");
-        } else if (scrolled > 87.5) {
+        } else if (scrolled > 35 && scrolled <= 55) {
+            swapSideMenuActive("menu-experience");
+        } else if (scrolled > 55 && scrolled <= 75) {
+            swapSideMenuActive("menu-skills");
+        } else if (scrolled > 75 && scrolled <= 90) {
+            swapSideMenuActive("menu-projects");
+        } else if (scrolled > 90) {
             swapSideMenuActive("menu-contact");
         }
     } else if (document.getElementById("menu-project") != null) {
-        if (scrolled >= 0 && scrolled <= 17.5) {
+        if (scrolled >= 0 && scrolled <= 15) {
             swapSideMenuActive("menu-project");
-        } else if (scrolled > 17.5 && scrolled <= 45) {
+        } else if (scrolled > 15 && scrolled <= 37.5) {
             swapSideMenuActive("menu-movement");
-        } else if (scrolled > 45 && scrolled <= 75) {
+        } else if (scrolled > 37.5 && scrolled <= 60) {
             swapSideMenuActive("menu-interaction");
-        } else if (scrolled > 75) {
+        } else if (scrolled > 60 && scrolled <= 82.5) {
+            swapSideMenuActive("menu-multiple");
+        } else if (scrolled > 82.5) {
             swapSideMenuActive("menu-future");
         }
     } else if (document.getElementById("menu-ssc") != null) {
