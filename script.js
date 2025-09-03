@@ -15,15 +15,15 @@ window.onscroll = function() {
     }
     
     if (document.getElementById("menu-about") != null) {
-        if (scrolled >= 0 && scrolled <= 12.5) {
+        if (scrolled >= 0 && scrolled <= 7.5) {
             swapSideMenuActive("menu-about");
-        } else if (scrolled > 12.5 && scrolled <= 35) {
+        } else if (scrolled > 7.5 && scrolled <= 35) {
             swapSideMenuActive("menu-education");
-        } else if (scrolled > 35 && scrolled <= 55) {
+        } else if (scrolled > 35 && scrolled <= 57.5) {
             swapSideMenuActive("menu-experience");
-        } else if (scrolled > 55 && scrolled <= 75) {
+        } else if (scrolled > 57.5 && scrolled <= 72.5) {
             swapSideMenuActive("menu-skills");
-        } else if (scrolled > 75 && scrolled <= 90) {
+        } else if (scrolled > 72.5 && scrolled <= 90) {
             swapSideMenuActive("menu-projects");
         } else if (scrolled > 90) {
             swapSideMenuActive("menu-contact");
