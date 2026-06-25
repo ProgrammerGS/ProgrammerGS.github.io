@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gordon Su | The Girl Under the Tree</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+            </div>
+        </nav>
+
+        <!-- Project Header -->
+        <header class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">The Girl Under the Tree</h1>
+                <p class="lead">A 3D Anomaly Puzzle Game</p>
+            </div>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Overview</h2>
+                <p>This game was developed for GDSxLoJam 2026 as a 3D puzzle experience where players search for anomalies to escape a forest. Since the jam, I have continued polishing the game to its current state, which now includes multilingual support. The current version features 21 anomalies and two distinct endings, each accompanied by animated cutscenes and ending screens rendered in Blender. All 3D assets were created in Blender, and the entire codebase was implemented in Godot.</p>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Godot Engine</strong> — implemented the entire game codebase</li>
+                    <li class="list-group-item"><strong>Blender</strong> — created all 3D assets and rendered cutscenes</li>
+                    <li class="list-group-item"><strong>3D Modeling & Animation</strong> — designed characters, environments, and animated sequences</li>
+                    <li class="list-group-item"><strong>Procedural Animation</strong> — applied advanced animation techniques for dynamic effects</li>
+                    <li class="list-group-item"><strong>Multilingual Support</strong> — integrated English, Japanese, and Chinese translations</li>
+                    <li class="list-group-item"><strong>Game Design</strong> — developed puzzle mechanics and anomaly system</li>
+                    <li class="list-group-item"><strong>Cutscene Production</strong> — created animated endings with Blender rendering</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Project Introduction Video -->
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Project Gameplay Video</h2>
+                <a href="https://www.youtube.com/watch?v=jy0rwaBRLEI" target="_blank" class="d-inline-block position-relative">
+                    <img src="https://img.youtube.com/vi/jy0rwaBRLEI/maxresdefault.jpg" 
+                    class="img-fluid rounded shadow-lg" alt="Project Gameplay Video" style="max-width: 900px;">
+                    <span class="position-absolute top-50 start-50 translate-middle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l4.5-2.5a.5.5 0 0 0 0-.814l-4.5-2.5z"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills Used -->
+        <section id="skills" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Skills & Technologies Used</h2>
+                <div class="row">
+
+                    <!-- Technical & Development -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Technical & Development</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Godot (game engine programming)</li>
+                            <li class="list-group-item">Programming (game logic & systems)</li>
+                            <li class="list-group-item">Godot Shading Language (shader development)</li>
+                            <li class="list-group-item">Procedural Animation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Design & Assets -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Design & Assets</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Game Design</li>
+                            <li class="list-group-item">Blender (3D asset creation)</li>
+                            <li class="list-group-item">3D Modeling</li>
+                            <li class="list-group-item">Animation</li>
+                            <li class="list-group-item">Cutscene & Ending Screen Rendering</li>
+                        </ul>
+                    </div>
+
+                    <!-- Localization & Languages -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Localization & Languages</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Excel & CSV (translation management)</li>
+                            <li class="list-group-item">English</li>
+                            <li class="list-group-item">Japanese</li>
+                            <li class="list-group-item">Traditional Chinese</li>
+                            <li class="list-group-item">Simplified Chinese</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- NPC Interactive Model -->
+        <section id="npc-model" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Main NPC Showcase</h2>
+                <model-viewer src="assets/npc.glb"
+                          alt="Main NPC character model"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          animation-name="Idle"
+                          autoplay
+                          style="width: 100%; height: 500px;">
+                </model-viewer>
+                <p class="text-center mt-3">
+                    Explore the main NPC interactively — rotate, zoom, and view her animations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Screenshots</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/anomaly_1.png" class="img-fluid rounded" alt="An anomaly where the house disappears">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/anomaly_2.png" class="img-fluid rounded" alt="An anomaly where a grave appears">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/anomaly_4.png" class="img-fluid rounded" alt="The bridge in the game">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/anomaly_5.png" class="img-fluid rounded" alt="The first ending screen of the game">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Learnings -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Challenges & Learnings</h2>
+                <p>During development, one of the biggest challenges was creating cutscenes that felt visually compelling. In the original game jam build, I produced the ending cutscene by posing characters directly in Godot. After reflecting on the result, I decided to re‑animate the sequence in Blender, where I had stronger control over lighting and scene composition. This shift wasn’t easy — I encountered multiple rendering issues and went through extensive trial‑and‑error before achieving a look I was satisfied with. Ultimately, the process gave me valuable experience in cinematic scene creation with Blender and reinforced the importance of persistence: experimenting across tools, troubleshooting problems, and iterating until the final cutscene matched the quality I envisioned.</p>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Explored multiple tools</strong> — experimented with both Godot and Blender for cutscene creation</li>
+                    <li class="list-group-item"><strong>Improved lighting & composition</strong> — leveraged Blender’s strengths to achieve more cinematic visuals</li>
+                    <li class="list-group-item"><strong>Overcame rendering issues</strong> — solved technical challenges through trial‑and‑error</li>
+                    <li class="list-group-item"><strong>Learned persistence</strong> — reinforced the value of not giving up when facing setbacks</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Links</h2>
+                <a href="https://programmergs.itch.io/the-girl-under-the-tree" class="btn btn-primary me-2">View Game on Itch.io</a>
+                <a href="index.html#projects" class="btn btn-outline-secondary">Back to Portfolio</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2026 Gordon Su. All rights reserved.</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gordon Su | Super Shrink Customizer</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .play-button-overlay {
+                background: rgba(0,0,0,0.6);   /* semi-transparent dark circle */
+                color: white;                  /* white play icon */
+                font-size: 2rem;               /* size of play symbol */
+                border-radius: 50%;            /* makes it circular */
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+            .play-button-overlay:hover {
+                background: rgba(0,0,0,0.8);   /* darker on hover */
+            }
+            .play-icon {
+                width: 0;
+                height: 0;
+                border-left: 25px solid white;   /* triangle color */
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                margin-left: 5px;                /* slight offset for centering */
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+            </div>
+        </nav>
+
+        <!-- Project Header -->
+        <header class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">Super Shrink Customizer</h1>
+                <p class="lead">A Character Customization Game</p>
+            </div>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Overview</h2>
+                <p>This game was developed for the Micro Game Jam hosted by the Game Design Society in January 2025. It is a customization game featuring eight distinct categories, along with sliders to adjust lighting angle and character poses. The game also includes a screenshot function for capturing favourite designs and a save system for preserving customizations. Since the jam, I have continued polishing the game to its current state which now supports Desktop, Android, and Browser builds with multilingual support. All of the 3D assets were created in Blender, and the entire codebase was written in Godot.</p>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>8 Customization Categories</strong> — wide variety of options for player creativity</li>
+                    <li class="list-group-item"><strong>Lighting & Pose Controls</strong> — sliders to adjust light angles and character poses</li>
+                    <li class="list-group-item"><strong>Screenshot Function</strong> — capture and share favorite designs</li>
+                    <li class="list-group-item"><strong>Save System</strong> — preserve and reload customizations</li>
+                    <li class="list-group-item"><strong>Cross‑Platform Builds</strong> — Desktop, Android, and Browser support</li>
+                    <li class="list-group-item"><strong>Multilingual Support</strong> — integrated English, Japanese, and Chinese translations</li>
+                    <li class="list-group-item"><strong>Self‑Developed Assets</strong> — all 3D models created in Blender</li>
+                    <li class="list-group-item"><strong>Custom Codebase</strong> — fully programmed in Godot</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Project Videos -->
+        <section id="project-videos" class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Project Videos</h2>
+                <div class="row">
+
+                    <!-- Gameplay Video -->
+                    <div class="col-md-6 mb-4">
+                        <h5 class="text-center mb-3">General Gameplay</h5>
+                        <video controls class="w-100">
+                            <source src="assets/custom_gameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <!-- Saving Function Video -->
+                    <div class="col-md-6 mb-4">
+                        <h5 class="text-center mb-3">Saving Function Demo</h5>
+                        <video controls class="w-100">
+                            <source src="assets/custom_saving.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Playable Browser Build -->
+        <section id="playable-demo" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2 class="mb-4">Try the Game</h2>
+
+                <!-- Square Thumbnail with Play Button -->
+                <div id="game-placeholder" class="position-relative overflow-hidden">
+                    <img src="assets/custom_thumbnail.jpg" alt="Game Thumbnail" style="object-fit: cover;">
+                    <div id="load-game" class="play-button-overlay position-absolute top-50 start-50 translate-middle">
+                        <div class="play-icon"></div>
+                    </div>
+                </div>
+
+                <!-- Info Note -->
+                <div class="alert alert-info d-flex align-items-center mt-3" role="alert">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Note: The Browser build has minor graphical differences. Translations and the screenshot function are also unavailable in this version.
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Used -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Skills & Technologies Used</h2>
+                <div class="row">
+
+                    <!-- Technical & Development -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Technical & Development</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Godot (game engine programming)</li>
+                            <li class="list-group-item">Programming (game logic & systems)</li>
+                            <li class="list-group-item">Godot Shading Language (shader development)</li>
+                            <li class="list-group-item">Multi‑platform Release — Desktop, Android, Browser</li>
+                        </ul>
+                    </div>
+
+                    <!-- Design & Assets -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Design & Assets</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Game Design</li>
+                            <li class="list-group-item">Blender (3D asset creation)</li>
+                            <li class="list-group-item">3D Modeling</li>
+                            <li class="list-group-item">Animation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Localization & Languages -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Localization & Languages</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Excel & CSV (translation management)</li>
+                            <li class="list-group-item">English</li>
+                            <li class="list-group-item">Japanese</li>
+                            <li class="list-group-item">Traditional Chinese</li>
+                            <li class="list-group-item">Simplified Chinese</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Screenshots</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/custom_1.png" class="img-fluid rounded" alt="Character design with animations panel on the left and hairstyle category on the right">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/custom_2.png" class="img-fluid rounded" alt="Character design with eyewear category visible on the right">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/custom_3.png" class="img-fluid rounded" alt="Character design with save menu open on the left and background category on the right">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="assets/custom_4.png" class="img-fluid rounded" alt="Character design with settings menu open on the left">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Learnings -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Challenges & Learnings</h2>
+                <p>The main challenge in developing this game was implementing a reliable save and load system. By carefully studying the Godot documentation and addressing each issue step by step, I successfully built the saving functionality. This process strengthened my ability to interpret technical documentation and enhanced my confidence in creating more complex systems.</p>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Save/Load System Implementation</strong> — built a reliable data persistence feature</li>
+                    <li class="list-group-item"><strong>Documentation Mastery</strong> — improved ability to read and apply Godot docs</li>
+                    <li class="list-group-item"><strong>Problem‑Solving Approach</strong> — tackled issues incrementally to reach a working solution</li>
+                    <li class="list-group-item"><strong>System Complexity</strong> — gained confidence in designing more advanced game systems</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Links</h2>
+                <a href="https://programmergs.itch.io/super-shrink-customizer" class="btn btn-primary me-2">View Game on Itch.io</a>
+                <a href="index.html#projects" class="btn btn-outline-secondary">Back to Portfolio</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2026 Gordon Su. All rights reserved.</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            document.getElementById("load-game").addEventListener("click", function() {
+                document.getElementById("game-placeholder").innerHTML =
+              '<iframe frameborder="0" src="https://itch.io/embed-upload/18041682" allowfullscreen="" width="1300" height="800" title="Playable Browser Build"></iframe>';
+            });
+        </script>
+    </body>
+</html>

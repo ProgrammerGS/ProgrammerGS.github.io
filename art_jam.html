@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gordon Su | Art Jam Animation</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+            </div>
+        </nav>
+
+        <!-- Project Header -->
+        <header class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">Art Jam Animation</h1>
+                <p class="lead">A Short Blender Animation</p>
+            </div>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Overview</h2>
+                <p>I created this animation for the GDS Art Jam 2025, where it won first place. The scene depicts a girl dressed for Halloween, gazing sadly out her window at the rain, unable to go trick‑or‑treating. All assets were produced during the jam, and I completed the project solo — from concept and scene planning to modeling, animation, lighting, and final rendering. I chose to submit a full animation rather than a still image, which set my work apart. The project strengthened my skills in Blender and gave me confidence in my abilities, marking my first event win.</p>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Blender</strong> — modeling, animation, lighting, and rendering</li>
+                    <li class="list-group-item"><strong>Scene Planning</strong> — designed room layout, props, and atmosphere</li>
+                    <li class="list-group-item"><strong>Animation</strong> — blinking character, rain effects, and lightning/thunder</li>
+                    <li class="list-group-item"><strong>Solo Project Execution</strong> — handled all stages from concept to final submission</li>
+                    <li class="list-group-item">
+                        <strong>Event Achievement</strong> — won first place at GDS Art Jam 2025
+                        <small class="text-muted d-block">Announcement shared in the club’s Discord community</small>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Project (Animation) Video -->
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">The Animation</h2>
+                <video controls class="w-100">
+                    <source src="assets/animation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Skills Used -->
+        <section id="skills" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Skills & Technologies Used</h2>
+                <div class="row">
+
+                    <!-- Design & Assets -->
+                    <div class="col-md-6">
+                        <h5 class="text-center mb-3">Design & Assets</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Concept & Scene Planning</li>
+                            <li class="list-group-item">Blender (3D asset creation)</li>
+                            <li class="list-group-item">3D Modeling</li>
+                            <li class="list-group-item">Animation</li>
+                            <li class="list-group-item">Lighting</li>
+                        </ul>
+                    </div>
+
+                    <!-- Production & Event -->
+                    <div class="col-md-6">
+                        <h5 class="text-center mb-3">Production</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Solo Project Execution</li>
+                            <li class="list-group-item">End-to-End Workflow — from concept to final render</li>
+                        </ul>
+
+                        <h5 class="text-center mb-3 mt-4">Event</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Event Achievement — GDS Art Jam 2025 Winner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive 3D Model -->
+        <section id="model" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Interactive 3D Scene</h2>
+                <model-viewer src="assets/scene.glb" 
+                          alt="Halloween animation scene"
+                          auto-rotate 
+                          camera-controls 
+                          shadow-intensity="1"
+                          style="width: 100%; height: 500px;">
+                </model-viewer>
+                <p class="text-center mt-3">Explore the scene interactively — rotate, zoom, and inspect the details.</p>
+            </div>
+        </section>
+
+        <!-- Creative Highlights -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Creative Highlights</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">
+                        <strong>Hidden storytelling details</strong> — subtle objects in the scene carry meaning:
+                        <ul>
+                            <li>The circled calendar date emphasizes anticipation for Halloween.</li>
+                            <li>The empty trick‑or‑treat bag shows her excitement and disappointment.</li>
+                            <li>The wand placed aside reflects her loss of mood to play.</li>
+                            <li>The jack‑o’‑lantern reinforces the Halloween theme and atmosphere.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Use of lighting</strong> — three distinct sources create mood:
+                        <ul>
+                            <li>Jack‑o’‑lantern glow behind the girl.</li>
+                            <li>Offscreen streetlight through the window.</li>
+                            <li>Lightning flashes that transform the scene dynamically.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Balance of negative space</strong> — deliberate emptiness (bare shelf, character’s stillness) enhances the somber tone without clutter.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Simplistic animation & camera</strong> — static camera, minimal character movement, and restrained effects keep focus on atmosphere rather than spectacle.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Efficient scene planning</strong> — only modeled what was visible (upper body, room objects, offscreen light source), saving time while maintaining impact.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Links</h2>
+                <a href="index.html#projects" class="btn btn-outline-secondary">Back to Portfolio</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2026 Gordon Su. All rights reserved.</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </body>
+</html>
