@@ -59,28 +59,34 @@
                 <h2 class="text-center mb-4">Skills & Technologies Used</h2>
                 <div class="row">
 
-                    <!-- Design & Assets -->
-                    <div class="col-md-6">
-                        <h5 class="text-center mb-3">Design & Assets</h5>
+                    <!-- Technical & Rendering -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Technical & Rendering</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Blender (3D asset creation)</li>
+                            <li class="list-group-item">Lighting</li>
+                            <li class="list-group-item">Depth of Field & Volumetric Fog</li>
+                            <li class="list-group-item">Particle Systems (rain effects)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Design & Animation -->
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Design & Animation</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Concept & Scene Planning</li>
-                            <li class="list-group-item">Blender (3D asset creation)</li>
                             <li class="list-group-item">3D Modeling</li>
                             <li class="list-group-item">Animation</li>
-                            <li class="list-group-item">Lighting</li>
+                            <li class="list-group-item">Cutscene Rendering</li>
                         </ul>
                     </div>
 
                     <!-- Production & Event -->
-                    <div class="col-md-6">
-                        <h5 class="text-center mb-3">Production</h5>
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-3">Production & Event</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Solo Project Execution</li>
                             <li class="list-group-item">End-to-End Workflow — from concept to final render</li>
-                        </ul>
-
-                        <h5 class="text-center mb-3 mt-4">Event</h5>
-                        <ul class="list-group list-group-flush">
                             <li class="list-group-item">Event Achievement — GDS Art Jam 2025 Winner</li>
                         </ul>
                     </div>
@@ -96,11 +102,18 @@
                     alt="Halloween animation scene"
                     camera-controls 
                     shadow-intensity="1"
-                    camera-orbit="0deg 90deg 2m"
-                    field-of-view="30deg"
-                    style="width: 100%; height: 500px; background-color: #222;">
+                    camera-orbit="0deg 90deg 0.5m"
+                    style="width: 100%; height: 500px; background-color: #222;"
+                    camera-target="0.325m 0.9m 0m">
                 </model-viewer>
+                
                 <p class="text-center mt-3">Explore the scene interactively — rotate, zoom, and inspect the details.</p>
+                
+                <!-- Info Note -->
+                <div class="alert alert-info d-flex align-items-center mt-3" role="alert">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Note: Two walls were removed for interactive viewing. The full animation includes all walls.
+                </div>
             </div>
         </section>
 
@@ -125,6 +138,9 @@
                             <li>Offscreen streetlight through the window.</li>
                             <li>Lightning flashes that transform the scene dynamically.</li>
                         </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Atmospheric rendering</strong> — depth of field and volumetric fog enhance realism and mood, guiding focus to the character while softening the environment.
                     </li>
                     <li class="list-group-item">
                         <strong>Balance of negative space</strong> — deliberate emptiness (bare shelf, character’s stillness) enhances the somber tone without clutter.
