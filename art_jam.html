@@ -93,11 +93,12 @@
             <div class="container">
                 <h2 class="text-center mb-4">Interactive 3D Scene</h2>
                 <model-viewer src="assets/scene.glb" 
-                          alt="Halloween animation scene"
-                          auto-rotate 
-                          camera-controls 
-                          shadow-intensity="1"
-                          style="width: 100%; height: 500px;">
+                    alt="Halloween animation scene"
+                    camera-controls 
+                    shadow-intensity="1"
+                    camera-orbit="0deg 90deg 2m"
+                    field-of-view="30deg"
+                    style="width: 100%; height: 500px; background-color: #222;">
                 </model-viewer>
                 <p class="text-center mt-3">Explore the scene interactively — rotate, zoom, and inspect the details.</p>
             </div>
