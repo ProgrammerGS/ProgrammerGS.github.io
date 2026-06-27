@@ -58,6 +58,20 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#game">Game</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#challenges">Challenges</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -70,7 +84,7 @@
         </header>
 
         <!-- Project Overview -->
-        <section class="py-5">
+        <section id="overview" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Overview</h2>
                 <p>This game was developed for the Micro Game Jam hosted by the Game Design Society in January 2025. It is a customization game featuring eight distinct categories, along with sliders to adjust lighting angle and character poses. The game also includes a screenshot function for capturing favourite designs and a save system for preserving customizations. Since the jam, I have continued polishing the game to its current state which now supports Desktop, Android, and Browser builds with multilingual support. All of the 3D assets were created in Blender, and the entire codebase was written in Godot.</p>
@@ -88,7 +102,7 @@
         </section>
         
         <!-- Project Videos -->
-        <section id="project-videos" class="py-5">
+        <section id="videos" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">Project Videos</h2>
                 <div class="row">
@@ -115,7 +129,7 @@
         </section>
         
         <!-- Playable Browser Build -->
-        <section id="playable-demo" class="py-5 bg-light">
+        <section id="game" class="py-5 bg-light">
             <div class="container text-center">
                 <h2 class="mb-4">Try the Game</h2>
 
@@ -136,7 +150,7 @@
         </section>
 
         <!-- Skills Used -->
-        <section class="py-5 bg-light">
+        <section id="skills" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-4">Skills & Technologies Used</h2>
                 <div class="row">
@@ -179,7 +193,7 @@
         </section>
 
         <!-- Screenshots -->
-        <section class="py-5">
+        <section id="screenshots" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">Screenshots</h2>
                 <div class="row justify-content-center">
@@ -228,7 +242,7 @@
         </div>
 
         <!-- Challenges & Learnings -->
-        <section class="py-5 bg-light">
+        <section id="challenges" class="py-5 bg-light">
             <div class="container">
                 <h2 class="mb-4">Challenges & Learnings</h2>
                 <p>The main challenge in developing this game was implementing a reliable save and load system. By carefully studying the Godot documentation and addressing each issue step by step, I successfully built the saving functionality. This process strengthened my ability to interpret technical documentation and enhanced my confidence in creating more complex systems.</p>
@@ -242,7 +256,7 @@
         </section>
 
         <!-- Links -->
-        <section class="py-5">
+        <section id="links" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Links</h2>
                 <a href="https://programmergs.itch.io/super-shrink-customizer" class="btn btn-primary me-2">View Game on Itch.io</a>

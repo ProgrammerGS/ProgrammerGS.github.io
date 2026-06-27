@@ -34,6 +34,20 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#challenges">Challenges</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -46,7 +60,7 @@
         </header>
 
         <!-- Project Overview -->
-        <section class="py-5">
+        <section id="overview" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Overview</h2>
                 <p>This game was developed for GDSxLoJam 2026 as a 3D puzzle experience where players search for anomalies to escape a forest. Since the jam, I have continued polishing the game to its current state, which now includes multilingual support. The current version features 21 anomalies and two distinct endings, each accompanied by animated cutscenes and ending screens rendered in Blender. Beyond anomalies, the main NPC responds dynamically to the player — smiling when looked at, waving from a distance, and even playing with an apple during a related anomaly — adding subtle interactive depth. All 3D assets were created in Blender, and the entire codebase was implemented in Godot.</p>
@@ -63,7 +77,7 @@
         </section>
         
         <!-- Project Introduction Video -->
-        <section class="py-5">
+        <section id="video" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">Project Gameplay Video</h2>
                 <a href="https://www.youtube.com/watch?v=jy0rwaBRLEI" target="_blank" class="d-inline-block position-relative">
@@ -124,7 +138,7 @@
         </section>
         
         <!-- NPC Interactive Model -->
-        <section id="npc-model" class="py-5">
+        <section id="showcase" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-4">Main NPC Showcase</h2>
 
@@ -168,7 +182,7 @@
         </section>
         
         <!-- Screenshots -->
-        <section class="py-5">
+        <section id="screenshots" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">Screenshots</h2>
                 <div class="row justify-content-center">
@@ -213,7 +227,7 @@
         </div>
 
         <!-- Challenges & Learnings -->
-        <section class="py-5 bg-light">
+        <section id="challenges" class="py-5 bg-light">
             <div class="container">
                 <h2 class="mb-4">Challenges & Learnings</h2>
                 <p>During development, one of the biggest challenges was creating cutscenes that felt visually compelling. In the original game jam build, I produced the ending cutscene by posing characters directly in Godot. After reflecting on the result, I decided to re‑animate the sequence in Blender, where I had stronger control over lighting and scene composition. This shift wasn’t easy — I encountered multiple rendering issues and went through extensive trial‑and‑error before achieving a look I was satisfied with. Ultimately, the process gave me valuable experience in cinematic scene creation with Blender and reinforced the importance of persistence: experimenting across tools, troubleshooting problems, and iterating until the final cutscene matched the quality I envisioned.</p>
@@ -227,7 +241,7 @@
         </section>
 
         <!-- Links -->
-        <section class="py-5">
+        <section id="links" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Links</h2>
                 <a href="https://programmergs.itch.io/the-girl-under-the-tree" class="btn btn-primary me-2">View Game on Itch.io</a>

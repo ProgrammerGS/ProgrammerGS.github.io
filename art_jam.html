@@ -13,6 +13,19 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -25,7 +38,7 @@
         </header>
 
         <!-- Project Overview -->
-        <section class="py-5">
+        <section id="overview" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Overview</h2>
                 <p>I created this animation for the GDS Art Jam 2025, where it won first place. The scene depicts a girl dressed for Halloween, gazing sadly out her window at the rain, unable to go trick‑or‑treating. All assets were produced during the jam, and I completed the project solo — from concept and scene planning to modeling, animation, lighting, and final rendering. I chose to submit a full animation rather than a still image, which set my work apart. The project strengthened my skills in Blender and gave me confidence in my abilities, marking my first event win.</p>
@@ -43,7 +56,7 @@
         </section>
         
         <!-- Project (Animation) Video -->
-        <section class="py-5">
+        <section id="video" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">The Animation</h2>
                 <video controls class="w-100">
@@ -95,7 +108,7 @@
         </section>
 
         <!-- Interactive 3D Model -->
-        <section id="model" class="py-5">
+        <section id="showcase" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-4">Interactive 3D Scene</h2>
                 <model-viewer src="assets/scene.glb" 
@@ -118,7 +131,7 @@
         </section>
 
         <!-- Creative Highlights -->
-        <section class="py-5 bg-light">
+        <section  id="highlights" class="py-5 bg-light">
             <div class="container">
                 <h2 class="mb-4">Creative Highlights</h3>
                 <ul class="list-group mb-4">
@@ -156,7 +169,7 @@
         </section>
 
         <!-- Links -->
-        <section class="py-5">
+        <section id="links" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Links</h2>
                 <a href="index.html#projects" class="btn btn-outline-secondary">Back to Portfolio</a>

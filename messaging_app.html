@@ -34,6 +34,18 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Gordon Su | Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#challenges">Challenges</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -46,7 +58,7 @@
         </header>
 
         <!-- Project Overview -->
-        <section class="py-5">
+        <section id="overview" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Overview</h2>
                 <p>This project was developed for my Object-Oriented Design and Analysis course at Western University as part of a five-member team. My primary contributions included implementing the UI windows, writing user stories during the planning phase, and assisting with the client-server connection setup. In addition to my own tasks, I reviewed components created by teammates—such as certain program modules and UI diagrams—and relayed mistakes I found, which helped improve overall quality. I collaborated closely with teammates to integrate features, and I was solely responsible for generating the complete Javadoc documentation. By the end of the project, we presented our work to a TA via video call, who expressed strong approval of the results.</p>
@@ -62,7 +74,7 @@
         </section>
 
         <!-- Skills Used -->
-        <section class="py-5 bg-light">
+        <section id="skills" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-4">Skills & Technologies Used</h2>
                 <div class="row">
@@ -96,7 +108,7 @@
         </section>
         
         <!-- Screenshots -->
-        <section class="py-5">
+        <section id="screenshots" class="py-5">
             <div class="container text-center">
                 <h2 class="mb-4">Screenshots</h2>
                 <div class="row justify-content-center">
@@ -151,7 +163,7 @@
         </div>
 
         <!-- Challenges & Learnings -->
-        <section class="py-5 bg-light">
+        <section id="challenges" class="py-5 bg-light">
             <div class="container">
                 <h2 class="mb-4">Challenges & Learnings</h2>
                 <p>A key technical challenge we faced was enabling our messaging application to connect users across different networks and devices. Initially, we had only tested the system locally on our own machines. To resolve this, our entire five‑member team worked together to research solutions and ultimately adopted ngrok to set up a server accessible externally. This collaborative approach worked reliably and allowed us to successfully showcase the project to our TA during the final video call.</p>
@@ -165,7 +177,7 @@
         </section>
 
         <!-- Links -->
-        <section class="py-5">
+        <section id="links" class="py-5">
             <div class="container">
                 <h2 class="mb-4">Links</h2>
                 <a href="index.html#projects" class="btn btn-outline-secondary">Back to Portfolio</a>
