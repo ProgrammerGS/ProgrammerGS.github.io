@@ -1,0 +1,167 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 56px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #0A192F !important;
+}
+.navbar .nav-link {
+  font-weight: 500;
+  color: #F9FAFB !important;
+  transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+  color: #00BFA6 !important;
+  text-decoration: underline;
+}
+
+header {
+  background: linear-gradient(135deg, #0A192F, #2563EB);
+}
+header h1 {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+header .btn {
+  border: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+header .btn:hover {
+  transform: scale(1.05);
+}
+
+section {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+h2 {
+  margin-bottom: 2rem !important;
+}
+
+.list-group-item {
+  padding: 0.75rem 1rem;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #00BFA6;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563EB, #00BFA6);
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #00BFA6, #2563EB);
+  transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+}
+
+.badge.bg-success {
+  background-color: #FF6B6B !important;
+  color: #fff;
+  font-weight: 600;
+}
+
+header .btn {
+  border-radius: 30px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+header .btn:hover {
+  transform: translateY(-3px);
+  background-color: #00BFA6;
+}
+
+footer {
+  background-color: #0A192F;
+  color: #F9FAFB;
+  border-top: 2px solid #00BFA6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.screenshot-img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.screenshot-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+.screenshot-img:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+#prevBtn, #nextBtn {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+#prevBtn:hover, #nextBtn:hover {
+    opacity: 1;
+}
+
+.play-button-overlay {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.play-button-overlay:hover {
+    background: rgba(0,0,0,0.8);
+}
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 25px solid white;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    margin-left: 5px;
+}
